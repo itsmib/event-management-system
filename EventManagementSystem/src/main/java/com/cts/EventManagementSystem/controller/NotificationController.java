@@ -1,5 +1,5 @@
 package com.cts.EventManagementSystem.controller;
 
-public class Notificationcontroller {
+public class NotificationController {
 
 }
