@@ -30,8 +30,9 @@ public class UserRegistrationController {
  
     @GetMapping("/login")
     public String loginForm() {
-        return "login";
+       return "login";
     }
+
  
     @GetMapping("/home")
     public String home() {
