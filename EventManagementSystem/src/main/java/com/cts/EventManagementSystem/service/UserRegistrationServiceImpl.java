@@ -23,4 +23,5 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
     public UserRegistration findByEmail(String email) {
         return repo.findByEmail(email);
     }
+    
 }
