@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home - Event Management System</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+	<form th:action="@{/verify-otp}" method="post">
+		<input type="hidden" name="email" th:value="${email}"> <label>Enter
+			OTP</label> <input type="text" name="otp" class="form-control" required>
+		<label class="mt-2">Enter New Password</label> <input type="password"
+			name="newPassword" class="form-control" required>
+		<p th:if="${error}" class="text-danger" th:text="${error}"></p>
+		<button class="btn btn-success mt-2">Reset Password</button>
+	</form>
+</body>
+</html>

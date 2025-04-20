@@ -1,0 +1,463 @@
+2025-04-20T06:56:47.409+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 24064 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T06:56:47.502+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T06:56:47.662+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-04-20T06:56:47.663+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-04-20T06:56:47.664+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-20T06:56:47.664+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-20T06:56:51.475+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T06:56:51.725+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 203 ms. Found 1 JPA repository interface.
+2025-04-20T06:56:54.312+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T06:56:54.380+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T06:56:54.382+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T06:56:54.704+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T06:56:54.706+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7040 ms
+2025-04-20T06:56:55.937+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T06:56:56.266+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-20T06:56:56.436+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T06:56:57.659+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T06:56:57.772+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-20T06:56:57.788+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T06:56:59.157+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@a34801f
+2025-04-20T06:56:59.164+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-20T06:56:59.492+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T06:56:59.679+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T06:57:02.264+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T06:57:03.800+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T06:57:05.215+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T06:57:05.217+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T06:57:05.307+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T06:57:05.711+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] thorizationManagerRequestMatcherRegistry : One of the patterns in [/register, /login, /forgot-password, enter-otp, send-otp, verify-otp, /css/**] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-04-20T06:57:07.597+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T06:57:07.816+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T06:57:07.850+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 22.125 seconds (process running for 24.892)
+2025-04-20T06:58:11.705+05:30  INFO 24064 --- [EventManagementSystem] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-20T06:58:11.715+05:30  INFO 24064 --- [EventManagementSystem] [Thread-9] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-20T06:58:11.734+05:30  INFO 24064 --- [EventManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-20T06:58:11.743+05:30  INFO 24064 --- [EventManagementSystem] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T06:58:11.750+05:30  INFO 24064 --- [EventManagementSystem] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-20T06:58:11.773+05:30  INFO 24064 --- [EventManagementSystem] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-20T06:58:12.035+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 24064 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T06:58:12.037+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T06:58:12.830+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T06:58:12.872+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2025-04-20T06:58:13.311+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T06:58:13.317+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T06:58:13.320+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T06:58:13.460+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T06:58:13.461+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1415 ms
+2025-04-20T06:58:13.566+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T06:58:13.576+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T06:58:13.619+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T06:58:13.623+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-20T06:58:13.624+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T06:58:13.713+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@4c49cf86
+2025-04-20T06:58:13.714+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-20T06:58:13.720+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T06:58:13.727+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T06:58:13.948+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T06:58:15.986+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T06:58:16.129+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T06:58:16.132+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T06:58:16.162+05:30  WARN 24064 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T06:58:16.545+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T06:58:16.569+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T06:58:16.580+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 4.641 seconds (process running for 93.622)
+2025-04-20T06:58:16.588+05:30  INFO 24064 --- [EventManagementSystem] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-20T06:58:28.053+05:30  INFO 24064 --- [EventManagementSystem] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-20T06:58:28.054+05:30  INFO 24064 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-20T06:58:28.065+05:30  INFO 24064 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2025-04-20T07:14:33.379+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 21780 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T07:14:33.387+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T07:14:33.510+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-04-20T07:14:33.510+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-04-20T07:14:33.510+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-20T07:14:33.511+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-20T07:14:35.753+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T07:14:35.914+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 1 JPA repository interface.
+2025-04-20T07:14:37.918+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T07:14:37.981+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T07:14:37.983+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T07:14:38.140+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T07:14:38.142+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4629 ms
+2025-04-20T07:14:39.096+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T07:14:39.303+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-20T07:14:39.449+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T07:14:40.216+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T07:14:40.278+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-20T07:14:40.285+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T07:14:40.930+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3c25fc41
+2025-04-20T07:14:40.934+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-20T07:14:41.313+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T07:14:41.482+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T07:14:43.210+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T07:14:44.202+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T07:14:45.192+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T07:14:45.193+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T07:14:45.283+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T07:14:47.126+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T07:14:47.319+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T07:14:47.347+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 15.121 seconds (process running for 16.909)
+2025-04-20T07:14:49.321+05:30  INFO 21780 --- [EventManagementSystem] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-20T07:14:49.322+05:30  INFO 21780 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-20T07:14:49.325+05:30  INFO 21780 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-04-20T07:23:11.126+05:30  INFO 21780 --- [EventManagementSystem] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-20T07:23:11.136+05:30  INFO 21780 --- [EventManagementSystem] [Thread-9] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-20T07:23:11.147+05:30  INFO 21780 --- [EventManagementSystem] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-04-20T07:23:11.157+05:30  INFO 21780 --- [EventManagementSystem] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T07:23:11.166+05:30  INFO 21780 --- [EventManagementSystem] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-20T07:23:11.188+05:30  INFO 21780 --- [EventManagementSystem] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-20T07:23:11.424+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 21780 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T07:23:11.425+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T07:23:11.907+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T07:23:11.941+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 1 JPA repository interface.
+2025-04-20T07:23:12.200+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T07:23:12.203+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T07:23:12.204+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T07:23:12.287+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T07:23:12.288+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 856 ms
+2025-04-20T07:23:12.417+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T07:23:12.425+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T07:23:12.450+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T07:23:12.452+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-20T07:23:12.453+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T07:23:12.511+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@7938b327
+2025-04-20T07:23:12.512+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-20T07:23:12.518+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T07:23:12.525+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T07:23:12.683+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T07:23:14.022+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T07:23:14.171+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T07:23:14.173+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T07:23:14.206+05:30  WARN 21780 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T07:23:14.457+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T07:23:14.475+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T07:23:14.483+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 3.118 seconds (process running for 524.046)
+2025-04-20T07:23:14.490+05:30  INFO 21780 --- [EventManagementSystem] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-04-20T07:24:59.606+05:30  INFO 21780 --- [EventManagementSystem] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-20T07:24:59.606+05:30  INFO 21780 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-20T07:24:59.608+05:30  INFO 21780 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-20T07:27:04.425+05:30  WARN 21780 --- [EventManagementSystem] [http-nio-8082-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1, SQLState: 23000
+2025-04-20T07:27:04.426+05:30 ERROR 21780 --- [EventManagementSystem] [http-nio-8082-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : ORA-00001: unique constraint (MISBAH.UK6DOTKOTT2KJSP8VW4D0M25FB7) violated
+
+2025-04-20T07:27:04.463+05:30 ERROR 21780 --- [EventManagementSystem] [http-nio-8082-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ORA-00001: unique constraint (MISBAH.UK6DOTKOTT2KJSP8VW4D0M25FB7) violated
+] [insert into users (contact_number,email,name,password,role,user_id) values (?,?,?,?,?,?)]; SQL [insert into users (contact_number,email,name,password,role,user_id) values (?,?,?,?,?,?)]; constraint [MISBAH.UK6DOTKOTT2KJSP8VW4D0M25FB7]] with root cause
+
+oracle.jdbc.OracleDatabaseException: ORA-00001: unique constraint (MISBAH.UK6DOTKOTT2KJSP8VW4D0M25FB7) violated
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:513) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:461) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1104) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:550) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:268) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:655) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:270) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:91) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:970) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1205) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3666) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CPreparedStatement.executeInternal(T4CPreparedStatement.java:1426) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeLargeUpdate(OraclePreparedStatement.java:3756) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3736) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1063) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:134) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:55) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:104) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:110) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:644) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:511) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:414) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1429) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:491) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2354) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1978) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.2.5.jar:6.2.5]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.2.5.jar:6.2.5]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:698) ~[spring-tx-6.2.5.jar:6.2.5]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:416) ~[spring-tx-6.2.5.jar:6.2.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.4.4.jar:3.4.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.2.5.jar:6.2.5]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.2.5.jar:6.2.5]
+	at jdk.proxy5/jdk.proxy5.$Proxy133.save(Unknown Source) ~[na:na]
+	at com.cts.EventManagementSystem.service.UserRegistrationServiceImpl.save(UserRegistrationServiceImpl.java:19) ~[classes/:na]
+	at com.cts.EventManagementSystem.controller.UserRegistrationController.processRegister(UserRegistrationController.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.39.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.39.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-04-20T07:29:31.972+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 30396 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T07:29:31.977+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T07:29:32.143+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-04-20T07:29:32.143+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-04-20T07:29:32.143+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-20T07:29:32.144+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-20T07:29:34.478+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T07:29:34.699+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 185 ms. Found 1 JPA repository interface.
+2025-04-20T07:29:36.547+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T07:29:36.603+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T07:29:36.604+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T07:29:36.782+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T07:29:36.783+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4638 ms
+2025-04-20T07:29:37.734+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T07:29:37.891+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-20T07:29:37.964+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T07:29:38.641+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T07:29:38.686+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-20T07:29:38.696+05:30  WARN 30396 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T07:29:39.205+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@7febec9a
+2025-04-20T07:29:39.209+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-20T07:29:39.430+05:30  WARN 30396 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T07:29:39.569+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T07:29:40.973+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T07:29:42.640+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T07:29:43.684+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T07:29:43.687+05:30  WARN 30396 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T07:29:43.778+05:30  WARN 30396 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T07:29:45.505+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T07:29:45.609+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T07:29:45.630+05:30  INFO 30396 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 14.872 seconds (process running for 15.874)
+2025-04-20T07:29:51.499+05:30  INFO 30396 --- [EventManagementSystem] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-20T07:29:51.500+05:30  INFO 30396 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-20T07:29:51.502+05:30  INFO 30396 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-04-20T09:39:52.070+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 13476 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T09:39:52.078+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T09:39:52.241+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-04-20T09:39:52.242+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-04-20T09:39:52.243+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-20T09:39:52.244+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-20T09:39:57.114+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T09:39:57.420+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 254 ms. Found 1 JPA repository interface.
+2025-04-20T09:40:00.386+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T09:40:00.453+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T09:40:00.455+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T09:40:00.735+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T09:40:00.736+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8490 ms
+2025-04-20T09:40:01.958+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T09:40:02.240+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-20T09:40:02.397+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T09:40:03.856+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T09:40:03.955+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-20T09:40:03.970+05:30  WARN 13476 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T09:40:04.854+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@785f798a
+2025-04-20T09:40:04.860+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-20T09:40:05.222+05:30  WARN 13476 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T09:40:05.443+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T09:40:07.720+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T09:40:07.880+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T09:40:09.225+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T09:40:09.228+05:30  WARN 13476 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T09:40:09.304+05:30  WARN 13476 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T09:40:11.480+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T09:40:11.643+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T09:40:11.677+05:30  INFO 13476 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 21.039 seconds (process running for 22.903)
+2025-04-20T09:40:11.987+05:30  INFO 13476 --- [EventManagementSystem] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-20T09:40:11.989+05:30  INFO 13476 --- [EventManagementSystem] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-20T09:40:11.992+05:30  INFO 13476 --- [EventManagementSystem] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-20T10:00:42.479+05:30  INFO 13476 --- [EventManagementSystem] [http-nio-8082-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x030x010xf40x010x000x010xf00x030x030xe60xe60xdex0xcb0xb40xaf&_0xae0x000x190xfc0x940xad0x900xd90xf10x19n0xd570xf40x7fO0xdb0xab0xd700xafz10x000x01|0x000x000x000x010x000x020x000x030x000x040x000x050x000x060x000x070x000x080x000x090x000x0a0x000x0b0x000x0c0x000x0d0x000x0e0x000x0f0x000x100x000x110x000x120x000x130x000x140x000x150x000x160x000x170x000x180x000x190x000x1a0x000x1b0x00/0x0000x0010x0020x0030x0040x0050x0060x0070x0080x0090x00:0x00;0x00<0x00=0x00>0x00?0x00@0x00A0x00B0x00C0x00D0x00E0x00F0x00g0x00h0x00i0x00j0x00k0x00l0x00m0x000x840x000x850x000x860x000x870x000x880x000x890x000x960x000x970x000x980x000x990x000x9a0x000x9b0x000x9c0x000x9d0x000x9e0x000x9f0x000xa00x000xa10x000xa20x000xa30x000xa40x000xa50x000xa60x000xa70x000xba0x000xbb0x000xbc0x000xbd0x000xbe0x000xbf0x000xc00x000xc10x000xc20x000xc30x000xc40x000xc50x130x010x130x020x130x030x130x040x130x050xc00x010xc00x020xc00x030xc00x040xc00x050xc00x060xc00x070xc00x080xc00x090xc00x0a0xc00x0b0xc00x0c0xc00x0d0xc00x0e0xc00x0f0xc00x100xc00x110xc00x120xc00x130xc00x140xc00x150xc00x160xc00x170xc00x180xc00x190xc0#0xc0$0xc0%0xc0&0xc0'0xc0(0xc0)0xc0*0xc0+0xc0,0xc0-0xc0.0xc0/0xc000xc010xc020xc0r0xc0s0xc0t0xc0u0xc0v0xc0w0xc0x0xc0y0xc0z0xc0{0xc0|0xc0}0xc0~0xc00x7f0xc00x800xc00x810xc00x820xc00x830xc00x840xc00x850xc00x860xc00x870xc00x880xc00x890xc00x8a0xc00x8b0xc00x8c0xc00x8d0xc00x8e0xc00x8f0xc00x900xc00x910xc00x920xc00x930xc00x940xc00x950xc00x960xc00x970xc00x980xc00x990xc00x9a0xc00x9b0xcc0xa80xcc0xa90xcc0xaa0xcc0xab0xcc0xac0xcc0xad0xcc0xae0x020x000x010x00J0x000x0a0x000x0a0x000x080x000x170x000x190x000x180x000x160x000x0b0x000x040x030x000x010x020x000x0d0x0000x00.0x040x030x050x030x060x030x080x070x080x080x080x1a0x080x1b0x080x1c0x080x090x080x0a0x080x0b0x080x040x080x050x080x060x040x010x050x010x060x010x030x030x030x010x030x020x040x020x050x020x060x02...]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:409) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:270) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-04-20T11:22:12.223+05:30  WARN 13476 --- [EventManagementSystem] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m36s897ms314µs300ns).
+2025-04-20T15:36:06.501+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 21100 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-04-20T15:36:06.505+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-04-20T15:36:06.589+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-04-20T15:36:06.590+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-04-20T15:36:06.590+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-20T15:36:06.591+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-20T15:36:08.380+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-20T15:36:08.503+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 1 JPA repository interface.
+2025-04-20T15:36:09.572+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-04-20T15:36:09.602+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-20T15:36:09.603+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-20T15:36:09.678+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-20T15:36:09.679+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3087 ms
+2025-04-20T15:36:10.187+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-20T15:36:10.298+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-04-20T15:36:10.366+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-04-20T15:36:10.841+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-20T15:36:10.889+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-20T15:36:10.895+05:30  WARN 21100 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-04-20T15:36:11.313+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@6f1133e5
+2025-04-20T15:36:11.316+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-20T15:36:11.489+05:30  WARN 21100 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-04-20T15:36:11.578+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-04-20T15:36:12.779+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-20T15:36:12.955+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-20T15:36:13.586+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-04-20T15:36:13.586+05:30  WARN 21100 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-20T15:36:13.642+05:30  WARN 21100 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-20T15:36:14.716+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-04-20T15:36:14.804+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-04-20T15:36:14.815+05:30  INFO 21100 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 9.087 seconds (process running for 10.25)
+2025-04-20T15:36:22.225+05:30  INFO 21100 --- [EventManagementSystem] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-20T15:36:22.225+05:30  INFO 21100 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-20T15:36:22.227+05:30  INFO 21100 --- [EventManagementSystem] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-04-20T18:37:50.307+05:30  WARN 21100 --- [EventManagementSystem] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41m24s775ms494µs500ns).
