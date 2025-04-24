@@ -4,89 +4,115 @@
 <meta charset="UTF-8">
 <title>Login - Event Management System</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-<!-- Optional: Add custom CSS for styling -->
 <style>
-/* Background Style */
+/* Dark Background */
 body, html {
 	height: 100%;
 	margin: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(to right, #6a11cb, #2575fc);
-	/* Gradient background */
+	background-color: #000; /* Black background */
+	color: #eee; /* Light text for contrast */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center; /* Center align all text within body */
 }
-/* Centering the form box */
+
+/* Transparent Dark Blue Container */
 .login-container {
-	background-color: white;
+	background-color: rgba(34, 49, 63, 0.7); /* Transparent dark blue */
 	padding: 40px;
 	border-radius: 12px;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 	width: 100%;
 	max-width: 400px;
 }
 
 h3 {
-	color: #333;
+	color: #ddd;
 	margin-bottom: 30px;
-	font-family: 'Arial', sans-serif;
-	text-align: center;
+	font-size: 1.8rem; /* Larger heading */
 }
 
 .form-group label {
 	font-weight: bold;
-	color: #555;
+	color: #bbb;
+	font-size: 1.1rem; /* Larger label */
+	display: block; /* Ensure label takes full width for better centering of input */
+	margin-bottom: 5px; /* Add some space below the label */
 }
 
 .form-control {
-	border-radius: 10px;
-	padding: 12px;
-	font-size: 1rem;
-	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 12px; /* Slightly larger padding */
+	font-size: 1.2rem; /* Larger input text */
+	border: 1px solid #555; /* Slightly lighter border for better visibility */
+	background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for input */
+	color: #eee;
+	width: 100%; /* Ensure input takes full width of the form group */
+	box-sizing: border-box; /* Include padding and border in element's total width and height */
+	margin-bottom: 15px; /* Add more space between input fields */
 }
 
 .form-control:focus {
-	border-color: #2575fc;
-	box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+	border-color: #3498db; /* Dark blue focus */
+	box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-success {
-	background-color: #28a745;
-	border-color: #28a745;
-	padding: 12px;
-	border-radius: 10px;
-	font-size: 1.1rem;
+	background-color: #2c3e50; /* Dark blue button */
+	border-color: #2c3e50;
+	padding: 14px 24px; /* Larger padding for button */
+	border-radius: 8px;
+	font-size: 1.3rem; /* Larger button text */
+	color: #eee;
+	transition: background-color 0.3s ease;
+	display: block; /* Make button a block-level element */
+	width: 100%; /* Ensure button takes full width of the container */
+	box-sizing: border-box; /* Include padding and border in button's total width */
+	margin-top: 20px; /* Add some space above the button */
 }
 
 .btn-success:hover {
-	background-color: #218838;
-	border-color: #1e7e34;
+	background-color: #34495e;
+	border-color: #34495e;
 }
 
 .btn-link {
-	color: #2575fc;
+	color: #3498db; /* Dark blue link */
 	text-decoration: none;
-	font-size: 0.9rem;
+	font-size: 1rem; /* Slightly larger link text */
 }
 
 .btn-link:hover {
 	text-decoration: underline;
 }
-/* Footer text */
+
 .footer-text {
-	font-size: 0.9rem;
-	color: #6c757d;
-	text-align: center;
+	font-size: 1rem; /* Slightly larger footer text */
+	color: #777;
 	margin-top: 20px;
 }
-/* Success Message Styling */
+
 .alert-success {
-	background-color: #d4edda;
-	color: #155724;
-	border: 1px solid #c3e6cb;
+	background-color: rgba(39, 174, 96, 0.8); /* Slightly transparent green */
+	color: #fff;
+	border: 1px solid #2ecc71;
 	border-radius: 5px;
-	padding: 10px;
+	padding: 12px;
 	margin-top: 20px;
+}
+
+/* Override body's text-align for the form content */
+.login-container, .form-group, .text-center {
+	text-align: center;
+}
+
+/* Ensure links and "Don't have an account?" text are centered */
+.text-center a, .text-center p {
+	display: block;
+	margin-top: 10px;
 }
 </style>
 </head>
@@ -104,7 +130,7 @@ h3 {
 					class="form-control" name="password" id="password"
 					placeholder="Enter your password" required>
 			</div>
-			<button type="submit" class="btn btn-success w-100">Login</button>
+			<button type="submit" class="btn btn-success">Login</button>
 			<p class="text-center mt-3">
 				<a th:href="@{/forgot-password}" class="btn-link">Forgot
 					Password?</a>
@@ -112,12 +138,10 @@ h3 {
 			<p class="text-center mt-2">
 				Don't have an account? <a th:href="@{/register}" class="btn-link">Register</a>
 			</p>
-			<!-- Success message -->
 			<p th:if="${param.logout}" class="alert-success text-center">You
 				have been logged out successfully.</p>
 		</form>
 	</div>
-	<!-- Bootstrap JavaScript -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
