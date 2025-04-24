@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event List</title>
+</head>
+<body>
+    <h1>Event List</h1>
+
+    <div th:if="${error}" th:text="${error}" style="color: red;"></div>
+
+    <a href="/events/new">Create New Event</a><br><br>
+
+    <form action="/events/filter" method="get">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category">
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
+
+        <label for="date">Date (yyyy-MM-dd):</label>
+        <input type="text" id="date" name="date">
+
+        <button type="submit">Filter</button>
+    </form>
+    <br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Organizer ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="event : ${events}">
+                <td th:text="${event.eventId}"></td>
+                <td th:text="${event.name}"></td>
+                <td th:text="${event.category}"></td>
+                <td th:text="${event.location}"></td>
+                <td th:text="${#dates.format(event.date, 'yyyy-MM-dd')}"></td>
+                <td th:text="${event.organizerId}"></td>
+                <td>
+                    <a th:href="@{/events/{id}(id=${event.eventId})}">Details</a> |
+                    <a th:href="@{/events/edit/{id}(id=${event.eventId})}">Edit</a> |
+                    <a th:href="@{/events/delete/{id}(id=${event.eventId})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
