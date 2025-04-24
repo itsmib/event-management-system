@@ -49,7 +49,7 @@ public class EventManagement {
         this.date = date;
         this.organizerId = organizerId;
     }
-
+    
     public Long getEventId() {
         return eventId;
     }
