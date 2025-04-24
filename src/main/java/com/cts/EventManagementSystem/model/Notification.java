@@ -1,70 +1,30 @@
 package com.cts.EventManagementSystem.model;
 
-import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "notification")
 public class Notification {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "notification_seq")
-	@SequenceGenerator(name = "notification_seq", sequenceName = "NOTIFICATION_SEQ", allocationSize = 1) // or 50, to match the DB
-	private Long notificationId;
-	private Long userId;
-	private Long eventId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String message;
-	private LocalDateTime sentTimestamp;
+	private LocalDateTime sentAt;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private UserRegistration user;
+	@ManyToOne
+	@JoinColumn(name = "event_id")
+	private Event event;
+	private String type; // For example, 'Booking Confirmation', 'Event Reminder', etc.
+	// Getters and setters
 
-	public Notification() {
-	}
-
-	// Constructor with fields (optional, for easier object creation)
-	public Notification(Long userId, Long eventId, String message) {
-		this.userId = userId;
-		this.eventId = eventId;
+	public Notification(String message, UserRegistration user, Event event, String type) {
 		this.message = message;
-		this.sentTimestamp = LocalDateTime.now(); // Set timestamp on creation
+		this.user = user;
+		this.event = event;
+		this.type = type;
+		this.sentAt = LocalDateTime.now();
 	}
-
-	public Long getNotificationId() {
-		return notificationId;
-	}
-
-	public void setNotificationId(Long notificationId) {
-		this.notificationId = notificationId;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public Long getEventId() {
-		return eventId;
-	}
-
-	public void setEventId(Long eventId) {
-		this.eventId = eventId;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
-	public LocalDateTime getSentTimestamp() {
-		return sentTimestamp;
-	}
-
-	public void setSentTimestamp(LocalDateTime sentTimestamp) {
-		this.sentTimestamp = sentTimestamp;
-	}
-
 }
