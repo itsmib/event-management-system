@@ -1,18 +1,69 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Home - Event Management System</title>
+<title>Reset Password - Event Management System</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<style>
+body, html {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f4f6f9;
+}
+
+.otp-container {
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+	max-width: 400px;
+	width: 100%;
+}
+
+.otp-container h4 {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.form-control {
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.btn-success {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.text-danger {
+	text-align: center;
+	margin-top: 10px;
+}
+</style>
 </head>
 <body>
-	<form th:action="@{/verify-otp}" method="post">
-		<input type="hidden" name="email" th:value="${email}"> <label>Enter
-			OTP</label> <input type="text" name="otp" class="form-control" required>
-		<label class="mt-2">Enter New Password</label> <input type="password"
-			name="newPassword" class="form-control" required>
-		<p th:if="${error}" class="text-danger" th:text="${error}"></p>
-		<button class="btn btn-success mt-2">Reset Password</button>
-	</form>
+	<div class="otp-container">
+		<h4>Reset Your Password</h4>
+		<form th:action="@{/verify-otp}" method="post">
+			<input type="hidden" name="email" th:value="${email}">
+			<div class="mb-3">
+				<label for="otp" class="form-label">Enter OTP</label> <input
+					type="text" id="otp" name="otp" class="form-control"
+					placeholder="6-digit code" required>
+			</div>
+			<div class="mb-3">
+				<label for="newPassword" class="form-label">New Password</label> <input
+					type="password" id="newPassword" name="newPassword"
+					class="form-control" placeholder="Enter new password" required>
+			</div>
+			<button type="submit" class="btn btn-success">Reset Password</button>
+			<p th:if="${error}" class="text-danger" th:text="${error}"></p>
+		</form>
+	</div>
 </body>
 </html>

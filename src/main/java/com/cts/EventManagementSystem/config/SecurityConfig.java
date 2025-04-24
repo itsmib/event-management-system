@@ -43,7 +43,7 @@ public class SecurityConfig {
 		http.authenticationProvider(authenticationProvider()).authorizeHttpRequests(auth -> auth.requestMatchers("/", // <--
 																														// permit
 																														// homepage
-				"/login", "/register", "/forgot-password", "/css/**", "/js/**", "/images/**" // if serving images on
+				"/login", "/register", "/forgot-password", "/send-otp", "/enter-otp", "/verify-otp", "/css/**", "/js/**", "/images/**" // if serving images on
 																								// homepage
 		).permitAll().requestMatchers("/admin/**").hasRole("ADMIN").requestMatchers("/user/**").hasRole("USER")
 				.anyRequest().authenticated())
