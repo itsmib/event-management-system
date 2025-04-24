@@ -46,11 +46,6 @@ public class UserRegistrationController {
 		return "login";
 	}
 
-	@GetMapping("/home")
-	public String home() {
-		return "home";
-	}
-
 	@Autowired
 	private JavaMailSender mailSender;
 	private final Map<String, String> otpStorage = new HashMap<>();
