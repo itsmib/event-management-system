@@ -15,7 +15,6 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
     @Override
     public void save(UserRegistration user) {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
-        user.setRole("USER");
         repo.save(user);
     }
  
