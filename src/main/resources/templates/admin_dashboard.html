@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+</head>
+<body>
+	<div class="container mt-4">
+		<h2>
+			Welcome, <span th:text="${user.name}">Admin</span>
+		</h2>
+		<h4>Admin Dashboard</h4>
+		<!-- Admin Navigation Menu -->
+		<div class="list-group">
+			<a href="/admin/events"
+				class="list-group-item list-group-item-action">Manage Events</a> <a
+				href="/admin/users" class="list-group-item list-group-item-action">Manage
+				Users</a> <a href="/admin/bookings"
+				class="list-group-item list-group-item-action">View Bookings</a> <a
+				href="/logout" class="list-group-item list-group-item-action">Logout</a>
+		</div>
+		<!-- Optional Section for Admin Notifications -->
+		<div class="alert alert-info mt-4">
+			<strong>Important: </strong> You have new event registrations to
+			review.
+		</div>
+		<!-- Footer -->
+		<footer class="mt-5 text-center">
+			<p>&copy; 2025 Event Management System</p>
+		</footer>
+	</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

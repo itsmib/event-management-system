@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.security.Principal;
 
 import com.cts.EventManagementSystem.model.UserRegistration;
 import com.cts.EventManagementSystem.service.UserRegistrationService;
@@ -37,6 +39,10 @@ public class UserRegistrationController {
 
 	@GetMapping("/login")
 	public String loginForm() {
+		return "login";
+	}
+	@GetMapping("/logout")
+	public String logout() {
 		return "login";
 	}
 
@@ -90,4 +96,5 @@ public class UserRegistrationController {
 			return "enter-otp";
 		}
 	}
+
 }
