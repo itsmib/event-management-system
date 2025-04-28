@@ -1,120 +1,163 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Register - Event Management System</title>
-<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-<script th:src="@{/js/jquery.min.js}"></script>
-<style>
-body {
-	background: linear-gradient(to right, #a1c4fd, #c2e9fb);
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+    <meta charset="UTF-8">
+    <title>Register - Event Management System</title>
+    <style>
+        body {
+            background-color: #000; /* Black background */
+            font-family: 'Arial', sans-serif;
+            display: flex; /* To center the container */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure full viewport height */
+            margin: 0; /* Remove default body margin */
+            color: #eee; /* Light text for better contrast on black background */
+        }
 
-.card {
-	background-color: #fff;
-	border-radius: 15px;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-	padding: 30px;
-	animation: fadeInZoom 1s ease;
-}
+        .register-container {
+            max-width: 500px; /* Further increased maximum width */
+            width: 60%; /* Take up 60% of the viewport width, up to max-width */
+            background-color: rgba(34, 49, 63, 0.7); /* Transparent dark blue background */
+            padding: 40px; /* Increased padding */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: #eee; /* Light text color */
+            margin-top: 40px; /* Increased top margin */
+            margin-bottom: 40px; /* Increased bottom margin */
+            text-align: center; /* Center text within the container */
+        }
 
+        .register-container h1 {
+            font-size: 32px; /* Increased heading font size */
+            font-weight: bold;
+            color: #ddd; /* Light heading color */
+            margin-bottom: 25px; /* Increased bottom margin */
+        }
 
-@keyframes fadeInZoom {from { opacity:0;
-	transform: scale(0.9);
-}
+        .form-label {
+            font-weight: 600;
+            color: #bbb; /* Light label color */
+            display: block; /* Make labels take full width */
+            margin-bottom: 8px; /* Increased bottom margin */
+            text-align: left; /* Align labels to the left */
+            font-size: 1.1em; /* Slightly larger label font */
+        }
 
-to {
-	opacity: 1;
-	transform: scale(1);
-}
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white input background */
+            border: 1px solid #555; /* Darker border */
+            color: #eee; /* Light input text color */
+            border-radius: 5px; /* Add some rounded corners */
+            padding: 12px; /* Increased padding */
+            width: 100%; /* Make input fields take full width */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            margin-bottom: 20px; /* Increased bottom margin */
+            font-size: 1.1em; /* Slightly larger input font */
+        }
 
-}
-.btn-custom {
-	background-color: #505fff;
-	border-color: #505fff;
-	color: white;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-}
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: #505fff; /* Focus border color */
+            box-shadow: 0 0 0 0.2rem rgba(80, 95, 255, 0.25);
+            outline: none; /* Remove default focus outline */
+        }
 
-.btn-custom:hover {
-	background-color: #4347ff;
-	border-color: #4347ff;
-	color: white;
-}
+        .btn-primary {
+            background-color: #505fff; /* Dark blue button color */
+            border: none;
+            color: #eee; /* Light button text color */
+            padding: 14px 24px; /* Increased padding to the button */
+            border-radius: 5px; /* Add rounded corners to the button */
+            cursor: pointer; /* Add a pointer on hover */
+            transition: background-color 0.3s ease;
+            width: 100%; /* Make the button full width */
+            font-size: 1.2em; /* Slightly larger button font */
+        }
 
-label {
-	margin-bottom: 10px;
-	display: block;
-}
+        .btn-primary:hover {
+            background-color: #6969ff; /* Slightly lighter hover color */
+        }
 
-input, select {
-	padding: 10px;
-	margin-bottom: 20px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
+        .btn-link {
+            color: #505fff; /* Dark blue link color */
+            text-decoration: none;
+            font-size: 1.1em; /* Slightly larger link font */
+        }
 
-input:focus, select:focus {
-	border-color: #505fff;
-	box-shadow: 0 0 5px rgba(80, 95, 255, 0.5);
-}
-</style>
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-home {
+            font-size: 1em; /* Slightly larger back to home font */
+            color: #777; /* Light gray back to home color */
+            margin-top: 25px; /* Increased top margin */
+            display: block; /* Make it a block element */
+            text-align: center; /* Center the link */
+        }
+
+        .back-to-home i {
+            margin-right: 8px; /* Increased icon margin */
+            font-size: 1.2em; /* Slightly larger icon size */
+        }
+
+        .error-message {
+            color: #ff6666; /* Light red error message color */
+            font-size: 1em; /* Slightly larger error message font */
+            margin-top: 8px; /* Increased top margin */
+            text-align: left; /* Align error messages to the left */
+        }
+
+        .mt-3 {
+            margin-top: 20px; /* Increased top margin for the "Already have an account?" text */
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-7 col-lg-6">
-				<div class="card">
-					<h3 class="text-center mb-4">User Registration</h3>
-					<form th:action="@{/register}" th:object="${user}" method="post">
-						<div class="form-group mb-3">
-							<label for="name">Full Name:</label> <input type="text"
-								th:field="*{name}" class="form-control" id="name"
-								placeholder="John Doe" required>
-						</div>
-						<div class="form-group mb-3">
-							<label for="email">Email Address:</label> <input type="email"
-								th:field="*{email}" class="form-control" id="email"
-								placeholder="johndoe@example.com" required>
-						</div>
-						<div class="form-group mb-3">
-							<label for="password">Password:</label> <input type="password"
-								th:field="*{password}" class="form-control" id="password"
-								placeholder="●●●●●●●" required>
-						</div>
-						<div class="form-group mb-3">
-							<label for="role">Register As:</label> <select name="role"
-								class="form-control" required>
-								<option value="USER">User</option>
-								<option value="ADMIN">Admin</option>
-							</select>
-						</div>
-						<div class="form-group mb-4">
-							<label for="contactNumber">Contact Number:</label> <input
-								type="text" th:field="*{contactNumber}" class="form-control"
-								id="contactNumber" placeholder="+1 123-456-7890" required>
-						</div>
-						<button type="submit" class="btn-custom w-100">Register</button>
-						<p class="text-center mt-3">
-							Already have an account? <a th:href="@{/login}"
-								class="text-decoration-none">Login here</a>
-						</p>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="register-container">
+        <h1 class="mb-4">User Registration</h1>
+        <form th:action="@{/register}" th:object="${user}" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Enter your full name" required>
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error-message"></p>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" th:field="*{email}" class="form-control" id="email" placeholder="Enter your email address" required>
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message"></p>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" th:field="*{password}" class="form-control" id="password" placeholder="Enter your password" required>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-message"></p>
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Register As</label>
+                <select name="role" class="form-control" required>
+                    <option value="USER">User</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="contactNumber" class="form-label">Contact Number</label>
+                <input type="text" th:field="*{contactNumber}" class="form-control" id="contactNumber" placeholder="Enter your contact number" required>
+                <p th:if="${#fields.hasErrors('contactNumber')}" th:errors="*{contactNumber}" class="error-message"></p>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <p class="mt-3">
+                Already have an account? <a th:href="@{/login}" class="btn-link">Login here</a>
+            </p>
+            <div th:if="${errorMessage}" class="alert alert-danger text-center mt-3" role="alert">
+                <p th:text="${errorMessage}"></p>
+            </div>
+        </form>
+        <div class="back-to-home mt-4">
+            <a href="/"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </div>
 
-	<script>
-		$(document).ready(function() {
-			$(".card").hide().fadeIn(1000);
-		});
-	</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </body>
 </html>
