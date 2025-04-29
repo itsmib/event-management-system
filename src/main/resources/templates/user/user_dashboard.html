@@ -6,37 +6,99 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet" />
+<style type="text/css">
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: #ffffff;
+    text-align: var(--bs-body-text-align);
+    background-color: #100000;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+.site-header {
+	background-color: transperent;
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.brand.header-brand h1 {
+	margin: 0;
+	font-size: 1.8rem;
+	color: #eee;
+}
+
+.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.site-nav ul li {
+	margin-left: 20px;
+}
+
+.site-nav ul li a {
+	color: #eee;
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: color 0.3s ease;
+}
+
+.site-nav ul li a:hover {
+	color: #ddd;
+}
+
+body {
+	padding-top: 60px; /* Adjust this value based on your header's height */
+}
+</style>
 </head>
 <body>
+
+<div th:replace="header :: header"></div>
 	<div class="container mt-4">
 		<h2>
 			Welcome, <span th:text="${username}">User</span>
 		</h2>
 		<h4>User Dashboard</h4>
-		<!-- User Navigation Menu -->
 		<div class="list-group">
 			<a href="/user/events" class="list-group-item list-group-item-action">View
 				Upcoming Events</a> <a href="/user/bookings"
 				class="list-group-item list-group-item-action">View My Bookings</a>
 			<a href="/user/profile"
 				class="list-group-item list-group-item-action">Edit Profile</a>
-			<!-- Logout link triggers form POST -->
 			<a href="#"
 				class="list-group-item list-group-item-action text-danger"
 				onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
 				Logout </a>
 		</div>
-		<!-- Hidden Logout Form -->
 		<form id="logoutForm" th:action="@{/logout}" method="post"
 			style="display: none;">
 			<input type="hidden" th:name="${_csrf.parameterName}"
 				th:value="${_csrf.token}" />
 		</form>
-		<!-- Optional Section for User Notifications -->
 		<div class="alert alert-success mt-4">
 			<strong>Reminder: </strong> You have an event coming up in 2 days.
-		</div>
-		<!-- Footer -->
+		</div>z
 		<footer class="mt-5 text-center">
 			<p>&copy; 2025 Event Management System</p>
 		</footer>

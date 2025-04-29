@@ -1,45 +1,199 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Create Event</title>
-<link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Create Event</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <style>
+        /* Dark Background */
+        body {
+            background-color: #000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 60px; /* Space for fixed navbar */
+        }
+
+        /* Smaller Transparent Dark Blue Container */
+        .container {
+            background-color: rgba(34, 49, 63, 0.7);
+            padding: 30px; /* Reduced padding */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 700px; /* Reduced max width */
+            margin: 20px auto;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 25px; /* Reduced margin */
+            font-size: 1.8rem; /* Reduced font size */
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #bbb;
+            font-size: 1rem; /* Reduced font size */
+            display: block;
+            margin-bottom: 5px; /* Reduced margin */
+        }
+
+        .form-control {
+            border-radius: 6px; /* Reduced border radius */
+            padding: 10px; /* Reduced padding */
+            font-size: 1rem; /* Reduced font size */
+            border: 1px solid #555;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #eee;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #505fff;
+            border-color: #2c3e50;
+            padding: 12px 20px; /* Reduced padding */
+            border-radius: 6px; /* Reduced border radius */
+            font-size: 1.1rem; /* Reduced font size */
+            color: #eee;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px; /* Reduced margin */
+        }
+
+        .btn-primary:hover {
+            background-color: #4145b0;
+            border-color: #34495e;
+        }
+
+        .btn-link {
+            color: #505fff;
+            text-decoration: none;
+            font-size: 0.9rem; /* Reduced font size */
+            display: block;
+            margin-top: 15px; /* Reduced margin */
+            text-align: center;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar Styles (assuming you have a header.html to include) */
+        .site-header {
+            background-color: #000000;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand.header-brand h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #eee;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .site-nav ul li {
+            margin-left: 20px;
+        }
+
+        .site-nav ul li a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .site-nav ul li a:hover {
+            color: #ddd;
+        }
+
+        /* Style for two fields in a row */
+        .form-row {
+            display: flex;
+            gap: 20px; /* Adjust spacing between fields in a row */
+        }
+
+        .form-row .form-group {
+            flex: 1; /* Each form-group takes equal width */
+            margin-bottom: 15px; /* Maintain consistent bottom margin */
+        }
+    </style>
 </head>
 <body>
-	<div class="container mt-4">
-		<h2>Create Event</h2>
-		<form th:action="@{/admin/save-event}" th:object="${event}"
-			method="post">
-			<div class="form-group">
-				<label for="name">Event Name:</label> <input type="text" id="name"
-					th:field="*{name}" class="form-control" placeholder="Event Name" />
-			</div>
-			<div class="form-group">
-				<label for="category">Category:</label> <input type="text"
-					id="category" th:field="*{category}" class="form-control"
-					placeholder="Category" />
-			</div>
-			<div class="form-group">
-				<label for="eventDate">Event Date:</label> <input type="date"
-					id="eventDate" th:field="*{eventDate}" class="form-control" />
-			</div>
-			<div class="form-group">
-				<label for="eventTime">Event Time:</label> <input type="time"
-					id="eventTime" th:field="*{eventTime}" class="form-control" />
-			</div>
-			<div class="form-group">
-				<label for="description">Event Description:</label>
-				<textarea id="description" th:field="*{description}"
-					class="form-control" rows="4" placeholder="Event Description"></textarea>
-			</div>
-			<div class="form-group">
-				<label for="location">Event Location:</label> <input type="text"
-					id="location" th:field="*{location}" class="form-control"
-					placeholder="Location" />
-			</div>
-			<button type="submit" class="btn btn-primary">Create Event</button>
-		</form>
-		<a href="/admin/my-events" class="btn btn-link mt-3">Back to My
-			Events</a>
-	</div>
+    <div th:replace="header :: header"></div>
+
+    <div class="container mt-4">
+        <h2>Create Event</h2>
+        <form th:action="@{/admin/save-event}" th:object="${event}"
+              method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Event Name:</label>
+                    <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Event Name" required/>
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" th:field="*{category}" class="form-control" placeholder="Category" required/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="eventDate">Event Date:</label>
+                    <input type="date" id="eventDate" th:field="*{eventDate}" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <label for="eventTime">Event Time:</label>
+                    <input type="time" id="eventTime" th:field="*{eventTime}" class="form-control" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Event Description:</label>
+                <textarea id="description" th:field="*{description}" class="form-control" rows="5" placeholder="Event Description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Event Location:</label>
+                <input type="text" id="location" th:field="*{location}" class="form-control" placeholder="Location" required/>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Event</button>
+        </form>
+        <a href="/admin/my-events" class="btn btn-link mt-3">Back to My Events</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ public class UserRegistrationController {
 	}
 	@GetMapping("/logout")
 	public String logout() {
-		return "login";
+		return "home";
 	}
 
 	@Autowired
