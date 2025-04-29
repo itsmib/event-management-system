@@ -67,7 +67,8 @@ public class EventController {
 		model.addAttribute("event", new Event());
 		return "admin/create_event";
 	}
-
+	
+	
 	@PostMapping("/admin/save-event")
 	@PreAuthorize("hasRole('ADMIN')")
 	public String saveEvent(@ModelAttribute("event") Event event, Principal principal) {
