@@ -5,84 +5,87 @@
     <title>Register - Event Management System</title>
     <style>
         body {
-            background-color: #000; /* Black background */
+            background-color: #000;
             font-family: 'Arial', sans-serif;
-            display: flex; /* To center the container */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            min-height: 100vh; /* Ensure full viewport height */
-            margin: 0; /* Remove default body margin */
-            color: #eee; /* Light text for better contrast on black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #eee;
+            padding-top: 60px; /* Add padding to the top of the body to prevent overlap */
+            position: relative; /* Ensure body is a positioning context for absolute elements within */
         }
 
         .register-container {
-            max-width: 500px; /* Further increased maximum width */
-            width: 60%; /* Take up 60% of the viewport width, up to max-width */
-            background-color: rgba(34, 49, 63, 0.7); /* Transparent dark blue background */
-            padding: 40px; /* Increased padding */
+            max-width: 500px;
+            width: 60%;
+            background-color: rgba(34, 49, 63, 0.7);
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            color: #eee; /* Light text color */
-            margin-top: 40px; /* Increased top margin */
-            margin-bottom: 40px; /* Increased bottom margin */
-            text-align: center; /* Center text within the container */
+            color: #eee;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            z-index: 2; /* Ensure the register container is above the navbar */
         }
 
         .register-container h1 {
-            font-size: 32px; /* Increased heading font size */
+            font-size: 32px;
             font-weight: bold;
-            color: #ddd; /* Light heading color */
-            margin-bottom: 25px; /* Increased bottom margin */
+            color: #ffffff;
+            margin-bottom: 25px;
         }
 
         .form-label {
             font-weight: 600;
-            color: #bbb; /* Light label color */
-            display: block; /* Make labels take full width */
-            margin-bottom: 8px; /* Increased bottom margin */
-            text-align: left; /* Align labels to the left */
-            font-size: 1.1em; /* Slightly larger label font */
+            color: #ffffff;
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+            font-size: 1.1em;
         }
 
         .form-control {
-            background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white input background */
-            border: 1px solid #555; /* Darker border */
-            color: #eee; /* Light input text color */
-            border-radius: 5px; /* Add some rounded corners */
-            padding: 12px; /* Increased padding */
-            width: 100%; /* Make input fields take full width */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
-            margin-bottom: 20px; /* Increased bottom margin */
-            font-size: 1.1em; /* Slightly larger input font */
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid #555;
+            color: #eee;
+            border-radius: 5px;
+            padding: 12px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 1.1em;
         }
 
         .form-control:focus {
             background-color: rgba(255, 255, 255, 0.2);
-            border-color: #505fff; /* Focus border color */
+            border-color: #505fff;
             box-shadow: 0 0 0 0.2rem rgba(80, 95, 255, 0.25);
-            outline: none; /* Remove default focus outline */
+            outline: none;
         }
 
         .btn-primary {
-            background-color: #505fff; /* Dark blue button color */
+            background-color: #505fff;
             border: none;
-            color: #eee; /* Light button text color */
-            padding: 14px 24px; /* Increased padding to the button */
-            border-radius: 5px; /* Add rounded corners to the button */
-            cursor: pointer; /* Add a pointer on hover */
+            color: #eee;
+            padding: 14px 24px;
+            border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s ease;
-            width: 100%; /* Make the button full width */
-            font-size: 1.2em; /* Slightly larger button font */
+            width: 100%;
+            font-size: 1.2em;
         }
 
         .btn-primary:hover {
-            background-color: #6969ff; /* Slightly lighter hover color */
+            background-color: #6969ff;
         }
 
         .btn-link {
-            color: #505fff; /* Dark blue link color */
+            color: #505fff;
             text-decoration: none;
-            font-size: 1.1em; /* Slightly larger link font */
+            font-size: 1.1em;
         }
 
         .btn-link:hover {
@@ -90,31 +93,82 @@
         }
 
         .back-to-home {
-            font-size: 1em; /* Slightly larger back to home font */
-            color: #777; /* Light gray back to home color */
-            margin-top: 25px; /* Increased top margin */
-            display: block; /* Make it a block element */
-            text-align: center; /* Center the link */
+            font-size: 1em;
+            color: #777;
+            margin-top: 25px;
+            display: block;
+            text-align: center;
         }
 
         .back-to-home i {
-            margin-right: 8px; /* Increased icon margin */
-            font-size: 1.2em; /* Slightly larger icon size */
+            margin-right: 8px;
+            font-size: 1.2em;
         }
 
         .error-message {
-            color: #ff6666; /* Light red error message color */
-            font-size: 1em; /* Slightly larger error message font */
-            margin-top: 8px; /* Increased top margin */
-            text-align: left; /* Align error messages to the left */
+            color: #ff6666;
+            font-size: 1em;
+            margin-top: 8px;
+            text-align: left;
         }
 
         .mt-3 {
-            margin-top: 20px; /* Increased top margin for the "Already have an account?" text */
+            margin-top: 20px;
+        }
+
+        /* Navbar Styles (from reusable_navbar_code.html) */
+         .site-header {
+            background-color: #000000;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand.header-brand h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #eee;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .site-nav ul li {
+            margin-left: 20px;
+        }
+
+        .site-nav ul li a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .site-nav ul li a:hover {
+            color: #ddd;
         }
     </style>
 </head>
 <body>
+	<!-- Include the header -->
+	<div th:replace="header :: header"></div>
     <div class="register-container">
         <h1 class="mb-4">User Registration</h1>
         <form th:action="@{/register}" th:object="${user}" method="post">
