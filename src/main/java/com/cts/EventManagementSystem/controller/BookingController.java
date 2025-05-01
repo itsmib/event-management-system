@@ -48,9 +48,11 @@ public class BookingController {
 	private UserRegistrationRepository userRepo;
 
 	@GetMapping("/event-details/{eventId}")
-	public String viewEventDetails(@PathVariable Long eventId, Model model) {
+	public String viewEventDetails(@PathVariable Long eventId, Model model, Principal principal) {
 		// Fetch the event using the ID
 		Event event = eventRepo.findById(eventId).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
+		UserRegistration user = userRepo.findByEmail(principal.getName());
+		model.addAttribute("user",user);
 		// Add event details to the model
 		model.addAttribute("event", event);
 		return "user/event_details"; // Show event details page
@@ -98,6 +100,22 @@ public class BookingController {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(user.getEmail());
 		message.setSubject("Event Booking Confirmation");
+		message.setText(emailContent);
+		mailSender.send(message);
+		
+		emailContent = "Hello " + admin.getName() + ",\n\n" +
+				   "Good news! A new booking has been made for your event: " + event.getName() + ".\n\n" +
+				   "Booking Details:\n" +
+				   "- User: " + user.getName() + " (" + user.getEmail() + ")\n" +
+				   "- Booking ID: " + booking.getBookingId() + "\n" +
+				   "- Event Date: " + event.getEventId() + "\n" +
+				   "- Time: " + event.getEventTime() + "\n" +
+				   "- Venue: " + event.getLocation() + "\n\n" +
+				   "You can view all bookings from your admin panel for more details.\n\n" +
+				   "Regards,\n" +
+				   "evm Team";
+		message.setTo(admin.getEmail());
+		message.setSubject("New Booking Confirmed");
 		message.setText(emailContent);
 		mailSender.send(message);
 		// Save the booking

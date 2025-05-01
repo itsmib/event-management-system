@@ -84,13 +84,17 @@ body {
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script>
+	<script th:inline="javascript">
 		function payNow() {
+			let eventName = /*[[${event.name}]]*/ "Default Event Name";
+			let name = /*[[${user.name}]]*/ "Unknow user";
+			let phoneNumber = /*[[${user.contactNumber}]]*/ "Unknow user";
+			let email = /*[[${user.email}]]*/ "Unknow user";
 			var options = {
 				"key" : "rzp_test_a7byZxfSHiEoYm", // Replace with your Razorpay Key
-				"amount" : "50000", // example amount in paise (₹500)
+				"amount" : "60000", // example amount in paise (₹500)
 				"currency" : "INR",
-				"name" : "Event Booking",
+				"name" : eventName + " Booking",
 				"description" : "Book event after payment",
 				"handler" : function(response) {
 					// On successful payment, proceed with form submission
@@ -100,9 +104,9 @@ body {
 					document.getElementById("bookingForm").submit();
 				},
 				"prefill" : {
-					"name" : "John Doe",
-					"email" : "john@example.com",
-					"contact" : "9999999999"
+					"name" : "name",
+					"email" : "email",
+					"contact" : "phoneNumber"
 				},
 				"theme" : {
 					"color" : "#0c5460"
