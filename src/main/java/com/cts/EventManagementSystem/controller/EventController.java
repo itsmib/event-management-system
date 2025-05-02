@@ -7,6 +7,10 @@ import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,7 +21,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
@@ -36,6 +44,18 @@ public class EventController {
 		System.out.println(events);
 		model.addAttribute("events", events);
 		return "user/view_events";
+	}
+	@GetMapping("/event/image/{id}")
+	@ResponseBody
+	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
+	   Event event = eventRepository.findById(id).orElse(null);
+	   if (event != null && event.getImage() != null) {
+	       HttpHeaders headers = new HttpHeaders();
+	       headers.setContentType(MediaType.IMAGE_JPEG); // or PNG based on your input
+	       return new ResponseEntity<>(event.getImage(), headers, HttpStatus.OK);
+	   } else {
+	       return ResponseEntity.notFound().build();
+	   }
 	}
 
 	@GetMapping("/dashboard")
@@ -70,7 +90,10 @@ public class EventController {
 
 	@PostMapping("/admin/save-event")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String saveEvent(@ModelAttribute("event") Event event, Principal principal) {
+	public String saveEvent(@RequestParam("imageFile") MultipartFile file, @ModelAttribute("event") Event event, Principal principal) throws IOException {
+		if (!file.isEmpty()) {
+			event.setImage(file.getBytes());
+		}
 		UserRegistration admin = userRepo.findByEmail(principal.getName());
 		event.setOrganizer(admin);
 		eventRepository.save(event);
