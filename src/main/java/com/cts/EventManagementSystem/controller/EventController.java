@@ -1,26 +1,26 @@
 package com.cts.EventManagementSystem.controller;
 
-import com.cts.EventManagementSystem.model.Event;
-import com.cts.EventManagementSystem.model.UserRegistration;
-import com.cts.EventManagementSystem.repository.EventRepository;
-import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
+import java.security.Principal;
+import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.security.Principal;
-import java.time.LocalDate;
-import java.util.List;
+import com.cts.EventManagementSystem.model.Event;
+import com.cts.EventManagementSystem.model.UserRegistration;
+import com.cts.EventManagementSystem.repository.EventRepository;
+import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
 
 @Controller
 public class EventController {
@@ -71,7 +71,8 @@ public class EventController {
 	
 	@PostMapping("/admin/save-event")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String saveEvent(@ModelAttribute("event") Event event, Principal principal) {
+	public String saveEvent(@ModelAttribute("event") Event event, Principal principal,@RequestParam("imageFile") MultipartFile imageFile,
+            RedirectAttributes redirectAttributes) {
 		UserRegistration admin = userRepo.findByEmail(principal.getName());
 		event.setOrganizer(admin);
 		eventRepository.save(event);
