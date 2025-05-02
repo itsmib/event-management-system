@@ -176,4 +176,9 @@ public class EventController {
 		eventRepository.delete(event);
 		return "redirect:/admin/my-events";
 	}
+	@GetMapping("/admin/edit_profile")
+	@PreAuthorize("hasRole('ADMIN')")
+	public String getEdit() {
+		return "/admin/edit_profile";
+	}
 }
