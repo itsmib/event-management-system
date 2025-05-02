@@ -14,9 +14,9 @@
 }
 
 .card-img {
-	background-position: center;
-	background-repeat: no-repeat;
-	border-radius: 5px 5px 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px 5px 0 0;
 }
 
 .event-card:hover {
@@ -84,6 +84,25 @@
 body {
 	padding-top: 60px;
 	/* Adjust this value based on your header's height */
+	background-image: url('/images/sumaid-pal-singh-bakshi-vq-A3vOlEr0-unsplash.jpg'); /* Replace with your image path */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed; /* Optional: keeps the background fixed during scrolling */
+    background-color: black;
+}
+
+h2 {
+  color: white;
+}
+
+.btn-primary {
+    background-color: #505fff;
+    border-color: #505fff;
+}
+
+.btn-primary:hover {
+    background-color: #3d3dff;
+    border-color: #3d3dff;
 }
 </style>
 </head>
@@ -107,7 +126,7 @@ body {
 						<p class="card-text">
 							Category: <span th:text="${event.category}">Category</span><br>
 							Date: <span
-								th:text="${#temporals.format(event.eventDate, 'dd MMM YYYY')}">Date</span><br>
+								th:text="${#temporals.format(event.eventDate, 'dd MMM')}">Date</span><br>
 							Location: <span th:text="${event.location}">Location</span>
 						</p>
 					</div>
@@ -122,7 +141,7 @@ body {
 				</div>
 			</div>
 		</div>
-		<a href="/user/dashboard" class="btn btn-secondary mt-3">Back to
+		<a href="/user/dashboard" class="btn btn-primary mt-3">Back to
 			Dashboard</a>
 	</div>
 	<script>

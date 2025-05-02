@@ -41,12 +41,10 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.authenticationProvider(authenticationProvider())
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/", "/home", // <--
-						// permit
-						// homepage
-						"/login", "/register", "/forgot-password", "/send-otp", "/enter-otp", "/verify-otp", "/css/**",
-						"/js/**", "/images/**" // if serving images on
+		http.authenticationProvider(authenticationProvider()).authorizeHttpRequests(auth -> auth.requestMatchers("/", "/home", "/about",// <--
+																														// permit
+																														// homepage
+				"/login", "/register", "/forgot-password", "/send-otp", "/enter-otp", "/verify-otp", "/css/**", "/js/**", "/images/**" // if serving images on
 
 				).permitAll().requestMatchers("/admin/**").hasRole("ADMIN").requestMatchers("/user/**").hasRole("USER")
 						.anyRequest().authenticated())

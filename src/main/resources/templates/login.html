@@ -5,7 +5,7 @@
 <title>Login - Event Management System</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <style>
-/* Dark Background */
+/* Background Image */
 body, html {
 	height: 100%;
 	margin: 0;
@@ -16,6 +16,9 @@ body, html {
 	color: #ffffff;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-align: center;
+	background-image: url('/images/sumaid-pal-singh-bakshi-vq-A3vOlEr0-unsplash.jpg'); /* Replace with your image path */
+	background-size: cover;
+	background-position: center;
 }
 
 /* Transparent Dark Blue Container */
@@ -172,11 +175,20 @@ body {
 	display: block;
 	margin-top: 10px;
 }
+
+.alert-danger {
+	background-color: rgba(220, 53, 69, 0.8);
+	color: #fff;
+	border: 1px solid #dc3545;
+	border-radius: 5px;
+	padding: 12px;
+	margin-top: 20px;
+	text-align: center;
+}
 </style>
 </head>
 <body>
 
-	<!-- Include the header -->
 	<div th:replace="header :: header"></div>
 	<div class="login-container">
 		<h3>Login to Event Management</h3>
@@ -201,9 +213,12 @@ body {
 			</p>
 			<p th:if="${param.logout}" class="alert-success text-center">You
 				have been logged out successfully.</p>
+			<div th:if="${param.error}" class="alert alert-danger" role="alert">
+				Invalid username and password.
+			</div>
 		</form>
 	</div>
-	<script>
+	<script
 		src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
 	</script>
 </body>
