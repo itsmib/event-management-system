@@ -41,7 +41,7 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.authenticationProvider(authenticationProvider()).authorizeHttpRequests(auth -> auth.requestMatchers("/", "/home",// <--
+		http.authenticationProvider(authenticationProvider()).authorizeHttpRequests(auth -> auth.requestMatchers("/", "/home", "/about",// <--
 																														// permit
 																														// homepage
 				"/login", "/register", "/forgot-password", "/send-otp", "/enter-otp", "/verify-otp", "/css/**", "/js/**", "/images/**" // if serving images on

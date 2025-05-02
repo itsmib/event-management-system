@@ -12,15 +12,20 @@ body, html {
 	align-items: center;
 	justify-content: center;
 	background: black;
+	background-image: url('/images/sumaid-pal-singh-bakshi-vq-A3vOlEr0-unsplash.jpg');
+	background-size: cover;
+	background-position: center;
 }
 
 .otp-container {
-	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
 	padding: 30px;
 	border-radius: 15px;
-	box-shadow: 08px16px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 	max-width: 400px;
 	width: 100%;
+	text-align: center;
+	margin-top: 60px;
 }
 
 .otp-container h4 {
@@ -30,23 +35,31 @@ body, html {
 }
 
 .form-control {
-	border-radius: 10px;
+	border-radius: 8px;
 	padding: 10px;
 	border: 1px solid #ccc;
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 15px;
 }
 
 .form-label {
 	margin-bottom: 5px;
 	display: block;
+	text-align: left;
+	font-size: 1.1rem;
+	color: #555;
 }
 
 .btn-success {
 	width: 100%;
-	padding: 10px;
-	border-radius: 5px;
+	padding: 12px;
+	border-radius: 8px;
 	background-color: #505fff;
 	color: white;
 	border: none;
+	font-size: 1.2rem;
+	transition: background-color 0.3s ease;
 }
 
 .btn-success:hover {
@@ -58,9 +71,58 @@ body, html {
 	margin-top: 10px;
 	color: #f00;
 }
+
+.site-header {
+	background-color: #000000;
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.brand.header-brand h1 {
+	margin: 0;
+	font-size: 1.8rem;
+	color: #eee;
+}
+
+.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.site-nav ul li {
+	margin-left: 20px;
+}
+
+.site-nav ul li a {
+	color: #eee;
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: color 0.3s ease;
+}
+
+.site-nav ul li a:hover {
+	color: #ddd;
+}
 </style>
 </head>
 <body>
+	<div th:replace="header :: header"></div>
 	<div class="otp-container">
 		<h4>Reset Your Password</h4>
 		<form th:action="@{/verify-otp}" method="post">

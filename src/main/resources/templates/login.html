@@ -5,23 +5,25 @@
 <title>Login - Event Management System</title>
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 <style>
-/* Dark Background */
+/* Background Image */
 body, html {
 	height: 100%;
 	margin: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #000; /* Black background */
-	color: #ffffff; /* Light text for contrast */
+	background-color: #000;
+	color: #ffffff;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	text-align: center; /* Center align all text within body */
+	text-align: center;
+	background-image: url('/images/sumaid-pal-singh-bakshi-vq-A3vOlEr0-unsplash.jpg'); /* Replace with your image path */
+	background-size: cover;
+	background-position: center;
 }
 
 /* Transparent Dark Blue Container */
 .login-container {
-
-	background-color: rgba(34, 49, 63, 0.7); /* Transparent dark blue */
+	background-color: rgba(34, 49, 63, 0.7);
 	padding: 40px;
 	border-radius: 12px;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -32,58 +34,58 @@ body, html {
 h3 {
 	color: #ffffff;
 	margin-bottom: 30px;
-	font-size: 1.8rem; /* Larger heading */
+	font-size: 1.8rem;
 }
 
 .form-group label {
 	font-weight: bold;
 	color: #bbb;
-	font-size: 1.1rem; /* Larger label */
-	display: block; /* Ensure label takes full width for better centering of input */
-	margin-bottom: 5px; /* Add some space below the label */
+	font-size: 1.1rem;
+	display: block;
+	margin-bottom: 5px;
 }
 
 .form-control {
 	border-radius: 8px;
-	padding: 12px; /* Slightly larger padding */
-	font-size: 1.2rem; /* Larger input text */
-	border: 1px solid #555; /* Slightly lighter border for better visibility */
-	background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for input */
+	padding: 12px;
+	font-size: 1.2rem;
+	border: 1px solid #555;
+	background-color: rgba(255, 255, 255, 0.1);
 	color: #eee;
-	width: 100%; /* Ensure input takes full width of the form group */
-	box-sizing: border-box; /* Include padding and border in element's total width and height */
-	margin-bottom: 15px; /* Add more space between input fields */
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom: 15px;
 }
 
 .form-control:focus {
-	border-color: #3498db; /* Dark blue focus */
+	border-color: #3498db;
 	box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 	background-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-success {
-	background-color: #505fff; /* Dark blue button */
+	background-color: #505fff;
 	border-color: #2c3e50;
-	padding: 14px 24px; /* Larger padding for button */
+	padding: 14px 24px;
 	border-radius: 8px;
-	font-size: 1.3rem; /* Larger button text */
+	font-size: 1.3rem;
 	color: #eee;
 	transition: background-color 0.3s ease;
-	display: block; /* Make button a block-level element */
-	width: 100%; /* Ensure button takes full width of the container */
-	box-sizing: border-box; /* Include padding and border in button's total width */
-	margin-top: 20px; /* Add some space above the button */
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 20px;
 }
 
 .btn-success:hover {
-	background-color: #505fff;
+	background-color: #4145b0;
 	border-color: #34495e;
 }
 
 .btn-link {
-	color: #505fff; /* Dark blue link */
+	color: #505fff;
 	text-decoration: none;
-	font-size: 1rem; /* Slightly larger link text */
+	font-size: 1rem;
 }
 
 .btn-link:hover {
@@ -91,18 +93,76 @@ h3 {
 }
 
 .footer-text {
-	font-size: 1rem; /* Slightly larger footer text */
+	font-size: 1rem;
 	color: #777;
 	margin-top: 20px;
 }
 
 .alert-success {
-	background-color: rgba(39, 174, 96, 0.8); /* Slightly transparent green */
+	background-color: rgba(39, 174, 96, 0.8);
 	color: #fff;
 	border: 1px solid #2ecc71;
 	border-radius: 5px;
 	padding: 12px;
 	margin-top: 20px;
+}
+
+/* Navbar Styles */
+.site-header {
+	background-color: #000000;
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.brand.header-brand h1 {
+	margin: 0;
+	font-size: 1.8rem;
+	color: #eee;
+}
+
+.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.site-nav ul li {
+	margin-left: 20px;
+}
+
+.site-nav ul li a {
+	color: #eee;
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: color 0.3s ease;
+}
+
+.site-nav ul li a:hover {
+	color: #ddd;
+}
+
+/* Add space between navbar and login container */
+body {
+	padding-top: 60px;
+	/* Add padding to the top of the body, adjust as needed */
+	display: flex; /* Keep using flexbox for overall centering */
+	justify-content: center;
+	align-items: center;
 }
 
 /* Override body's text-align for the form content */
@@ -115,9 +175,21 @@ h3 {
 	display: block;
 	margin-top: 10px;
 }
+
+.alert-danger {
+	background-color: rgba(220, 53, 69, 0.8);
+	color: #fff;
+	border: 1px solid #dc3545;
+	border-radius: 5px;
+	padding: 12px;
+	margin-top: 20px;
+	text-align: center;
+}
 </style>
 </head>
 <body>
+
+	<div th:replace="header :: header"></div>
 	<div class="login-container">
 		<h3>Login to Event Management</h3>
 		<form th:action="@{/login}" method="post">
@@ -141,9 +213,13 @@ h3 {
 			</p>
 			<p th:if="${param.logout}" class="alert-success text-center">You
 				have been logged out successfully.</p>
+			<div th:if="${param.error}" class="alert alert-danger" role="alert">
+				Invalid username and password.
+			</div>
 		</form>
 	</div>
 	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+		src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
+	</script>
 </body>
 </html>

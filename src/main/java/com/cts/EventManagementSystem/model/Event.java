@@ -15,7 +15,8 @@ public class Event {
 	private LocalDate eventDate;
 	private String description;
 	private LocalTime eventTime;
-
+	@Lob
+	private byte[] image;
 	@ManyToOne
 	@JoinColumn(name = "organizer_Id", referencedColumnName = "userId")
 	private UserRegistration organizer;
@@ -83,6 +84,14 @@ public class Event {
 
 	public void setEventTime(LocalTime eventTime) {
 		this.eventTime = eventTime;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	
 

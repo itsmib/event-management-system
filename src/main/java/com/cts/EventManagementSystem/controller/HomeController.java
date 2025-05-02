@@ -27,6 +27,11 @@ public class HomeController {
 
         return "home"; // Return the name of your Thymeleaf template
     }
+    
+    @GetMapping("/about")
+    public String getAbout() {
+    	return "about";
+    }
 
     // ... your other controllers
 }
