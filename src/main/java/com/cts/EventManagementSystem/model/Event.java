@@ -5,6 +5,7 @@ import jakarta.validation.constraints.Null;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 public class Event {
@@ -22,6 +23,9 @@ public class Event {
 	@ManyToOne
 	@JoinColumn(name = "organizer_Id", referencedColumnName = "userId")
 	private UserRegistration organizer;
+	
+	@OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Booking> bookings;
 
 	private int totalTickets;
 	

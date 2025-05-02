@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title th:text="${event.name}">Event Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <style>
+<meta charset="UTF-8">
+<title th:text="${event.name}">Event Details</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
 body {
-  background-color: #000000;
-  color: #ffffff;
-  background-image: url('/images/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+	background-color: #000000;
+	color: #ffffff;
+	background-image: url('/images/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 70px;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 70px;
+	min-height: 100vh;
 }
 
 .event-wrapper {
-  background-color: rgba(26, 26, 26, 0.8);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  width: 95%;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+	background-color: rgba(26, 26, 26, 0.8);
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	width: 95%;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
 }
 
 .card {
-  background-color: #1a1a1a;
-  border: 1px solid #505fff;
+	background-color: #1a1a1a;
+	border: 1px solid #505fff;
 }
 
 .card-header {
-  background-color: #505fff;
-  color: #ffffff;
-  border-radius: 10px 10px 0 0;
+	background-color: #505fff;
+	color: #ffffff;
+	border-radius: 10px 10px 0 0;
 }
 
 .card-body {
-    padding: 20px;
+	padding: 20px;
 }
 
 .btn-success {
-  background-color: #505fff;
-  border-color: #505fff;
+	background-color: #505fff;
+	border-color: #505fff;
 }
 
 .btn-outline-secondary {
-  color: #505fff;
-  border-color: #505fff;
+	color: #505fff;
+	border-color: #505fff;
 }
 
 .btn-outline-secondary:hover {
-  background-color: #505fff;
-  color: #ffffff;
+	background-color: #505fff;
+	color: #ffffff;
 }
 
 .site-header {
@@ -113,13 +115,13 @@ body {
 .site-nav ul li a:hover {
 	color: #ddd;
 }
-    </style>
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="site-header-inner">
-            <div class="brand header-brand">
-                <h1 class="m-0">
+	<header class="site-header">
+		<div class="site-header-inner">
+			<div class="brand header-brand">
+				<h1 class="m-0">
 					<a href="/"> <svg width="32" height="32" viewBox="0 0 32 32"
 							xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -148,82 +150,84 @@ body {
 </svg>
 					</a>
 				</h1>
-            </div>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a th:href="@{/user/events}">Events</a></li>
-                    <li><a th:href="@{/about}">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main class="main-container">
-        <div class="event-wrapper">
-            <div class="card">
-                <div class="card-header text-white">
-                    <h2 class="mb-0" th:text="${event.name}">Event Name</h2>
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <p>
-                                <strong>Category:</strong> <span th:text="${event.category}">Category</span>
-                            </p>
-                            <p>
-                                <strong>Location:</strong> <span th:text="${event.location}">Location</span>
-                            </p>
-                        </div>
-                        <div class="col-md-6">
-                            <p>
-                                <strong>Date:</strong> <span
-                                    th:text="${#temporals.format(event.eventDate, 'dd MMM')}">Date</span>
-                            </p>
-                            <p>
-                                <strong>Time:</strong> <span
-                                    th:text="${#temporals.format(event.eventTime, 'hh:mm a')}">Time</span>
-                            </p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="mb-4">
-                        <h5>Description</h5>
-                        <p th:text="${event.description}">Event description goes here.</p>
-                    </div>
+			</div>
+			<nav class="site-nav">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a th:href="@{/user/events}">Events</a></li>
+					<li><a th:href="@{/about}">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="main-container">
+		<div class="event-wrapper">
+			<div class="card">
+				<div class="card-header text-white">
+					<h2 class="mb-0" th:text="${event.name}">Event Name</h2>
+				</div>
+				<div class="card-body">
+					<div class="row mb-3">
+						<div class="col-md-6">
+							<p>
+								<strong>Category:</strong> <span th:text="${event.category}">Category</span>
+							</p>
+							<p>
+								<strong>Location:</strong> <span th:text="${event.location}">Location</span>
+							</p>
+						</div>
+						<div class="col-md-6">
+							<p>
+								<strong>Date:</strong> <span
+									th:text="${#temporals.format(event.eventDate, 'dd MMM')}">Date</span>
+							</p>
+							<p>
+								<strong>Time:</strong> <span
+									th:text="${#temporals.format(event.eventTime, 'hh:mm a')}">Time</span>
+							</p>
+						</div>
+					</div>
+					<hr />
+					<div class="mb-4">
+						<h5>Description</h5>
+						<p th:text="${event.description}">Event description goes here.</p>
+					</div>
 
-                    <div class="mb-3">
-                        <strong class="me-2">Tickets:</strong>
-                        <div class="input-group" style="width: 150px;">
-                            <button class="btn btn-outline-secondary" type="button" id="minus">
-                                -
-                            </button>
-                            <input type="number" id="ticketCount" class="form-control text-center" value="1" min="1"
-                                aria-label="Number of tickets" aria-describedby="minus plus">
-                            <button class="btn btn-outline-secondary" type="button" id="plus">
-                                +
-                            </button>
-                        </div>
-                    </div>
+					<div class="mb-3">
+						<strong class="me-2">Tickets:</strong>
+						<div class="input-group" style="width: 150px;">
+							<button class="btn btn-outline-secondary" type="button"
+								id="minus">-</button>
+							<input type="number" id="ticketCount"
+								class="form-control text-center" value="1" min="1"
+								aria-label="Number of tickets" aria-describedby="minus plus">
+							<button class="btn btn-outline-secondary" type="button" id="plus">
+								+</button>
+						</div>
+					</div>
 
-                    <p>
-                        <strong>Total Amount:</strong> <span id="totalAmount">500.00</span> INR
-                    </p>
+					<p>
+						<strong>Total Amount:</strong> <span id="totalAmount">500.00</span>
+						INR
+					</p>
 
-                    <form id="bookingForm"
-                        th:action="@{/user/book-event/{eventId}(eventId=${event.eventId})}"
-                        method="post">
-                        <input type="hidden" name="ticketCount" id="hiddenTicketCount" value="1">
-                        <button id="book-button" onClick="payNow()" type="button"
-                            class="btn btn-success btn-lg">Book This Event</button>
-                        <a href="/user/events"
-                            class="btn btn-outline-secondary btn-lg ms-2">Back to Events</a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+					<form id="bookingForm"
+						th:action="@{/user/book-event/{eventId}(eventId=${event.eventId})}"
+						method="post">
+						<input type="hidden" name="ticketCount" id="hiddenTicketCount"
+							value="1">
+						<button id="book-button" onClick="payNow()" type="button"
+							class="btn btn-success btn-lg">Book This Event</button>
+						<a href="/user/events"
+							class="btn btn-outline-secondary btn-lg ms-2">Back to Events</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
         const ticketCountInput = document.getElementById('ticketCount');
         const plusButton = document.getElementById('plus');
         const minusButton = document.getElementById('minus');
