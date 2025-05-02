@@ -8,4 +8,5 @@ import java.util.List;
 public interface BookingRepository extends JpaRepository<Booking, Long> {
    Optional<Booking> findByEventAndUser(Event event, UserRegistration user);
    List<Booking> findByUser(UserRegistration user);
+   List<Booking> findByEvent(Event event);
 }

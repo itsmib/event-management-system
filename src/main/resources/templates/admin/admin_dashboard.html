@@ -77,8 +77,9 @@
         }
 
         .dashboard-card-title {
-            font-size: 1.1rem;
-            color: #777;
+            font-size: 1.7rem;
+            font-weight: bold;
+            color: #00000;
         }
 
         .dashboard-card a {
@@ -94,7 +95,7 @@
         }
 
         .card-icon {
-            font-size: 3rem;
+            font-size: 5rem;
             margin-left: 20px;
             color: #007bff; /* Default icon color */
         }
@@ -132,9 +133,8 @@
             <div class="col-md-4">
                 <div class="dashboard-card card-total-events">
                     <div class="dashboard-card-info">
-                    <div class="dashboard-card-value">Events</div>
-                        <div class="dashboard-card-value" th:text="${totalEvents}">150</div>
-                        <div class="dashboard-card-title">Total Events</div>
+                    	<div class="dashboard-card-title">Total Events</div>
+                        <div class="dashboard-card-value" th:text="${totalEvent}"></div>
                     </div>
                     <i class="bi bi-calendar-range card-icon"></i>
                 </div>
@@ -142,9 +142,8 @@
             <div class="col-md-4">
                 <div class="dashboard-card card-total-users">
                     <div class="dashboard-card-info">
-                    <div class="dashboard-card-value">Users</div>
-                        <div class="dashboard-card-value" th:text="${totalUsers}">50</div>
-                        <div class="dashboard-card-title">Total Users</div>
+                    	<div class="dashboard-card-title">Total Users</div>
+                        <div class="dashboard-card-value" th:text="${totalUsers}"></div>
                     </div>
                     <i class="bi bi-people-fill card-icon"></i>
                 </div>
@@ -152,9 +151,9 @@
             <div class="col-md-4">
                 <div class="dashboard-card card-confirmed-bookings">
                     <div class="dashboard-card-info">
-                    	<div class="dashboard-card-value">Bookings</div>
+                    	<div class="dashboard-card-title">Bookings</div>
                         <div class="dashboard-card-value" th:text="${confirmedBookings}">200</div>
-                        <div class="dashboard-card-title">Confirmed Bookings</div>
+                        
                     </div>
                     <i class="bi bi-check-circle-fill card-icon"></i>
                 </div>
@@ -162,7 +161,7 @@
             <div class="col-md-4">
                 <div class="dashboard-card card-events">
                     <div class="dashboard-card-info">
-                        <div class="dashboard-card-value">Go</div>
+                       
                         <div class="dashboard-card-title">Create New Event</div>
                         <a href="/admin/create-event">Create <i class="bi bi-arrow-right"></i></a>
                     </div>
@@ -172,7 +171,7 @@
             <div class="col-md-4">
                 <div class="dashboard-card card-bookings">
                     <div class="dashboard-card-info">
-                        <div class="dashboard-card-value">Manage</div>
+                
                         <div class="dashboard-card-title">Manage Events</div>
                         <a href="/admin/my-events">Manage <i class="bi bi-arrow-right"></i></a>
                     </div>
