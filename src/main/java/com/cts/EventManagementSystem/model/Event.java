@@ -1,6 +1,8 @@
 package com.cts.EventManagementSystem.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Null;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -20,6 +22,18 @@ public class Event {
 	@ManyToOne
 	@JoinColumn(name = "organizer_Id", referencedColumnName = "userId")
 	private UserRegistration organizer;
+
+	private int totalTickets;
+	
+	
+
+	public int getTotalTickets() {
+		return totalTickets;
+	}
+
+	public void setTotalTickets(int totalTickets) {
+		this.totalTickets = totalTickets;
+	}
 
 	// Getters and Setters
 	public Long getEventId() {
