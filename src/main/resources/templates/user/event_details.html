@@ -259,12 +259,11 @@ body {
         ticketCountInput.addEventListener('change', () => {
             updateAmount();
         });
-
         function payNow() {
             const ticketCount = parseInt(ticketCountInput.value);
             const amount = ticketCount * ticketPrice * 100;
             var options = {
-                "key": "rzp_test_a7byZxfSHiEoYm",
+                "key": "rzp_test_gp6ZTPZrFpeDTg",
                 "amount": amount,
                 "currency": "INR",
                 "name": "Event Booking",

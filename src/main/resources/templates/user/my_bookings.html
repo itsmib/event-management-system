@@ -277,6 +277,7 @@
                         <th>Date</th>
                         <th>Time</th>
                         <th>Booked On</th>
+                        <th>Total Bookings</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -286,6 +287,7 @@
                         <td th:text="${#temporals.format(b.event.eventDate, 'dd MMM yyyy')}">Date</td>
                         <td th:text="${#temporals.format(b.event.eventTime, 'hh:mm a')}">Time</td>
                         <td th:text="${#temporals.format(b.bookingDate, 'dd MMM yyyy')}">Booked On</td>
+                        <td th:text="${b.totalBooking}" style="text-align: center;">Total Bookings</td>
                         <td>
                             <form th:action="@{/user/cancel/{id}(id=${b.bookingId})}" method="post" onsubmit="return confirm('Cancel booking?');">
                                 <button type="submit" class="btn btn-danger btn-sm">Cancel</button>

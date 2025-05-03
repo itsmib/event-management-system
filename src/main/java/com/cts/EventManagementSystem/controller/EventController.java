@@ -43,7 +43,6 @@ public class EventController {
 	@GetMapping("/user/events")
 	public String viewUpcomingEvents(Model model) {
 		List<Event> events = eventRepository.findByEventDateAfterOrderByEventDateAsc(LocalDate.now());
-		System.out.println(events);
 		model.addAttribute("events", events);
 		return "user/view_events";
 	}
@@ -74,7 +73,8 @@ public class EventController {
 
 	@GetMapping("/user/dashboard")
 	public String userDashboard(Model model, Principal principal) {
-		model.addAttribute("username", principal.getName());
+		UserRegistration user = userRepo.findByEmail(principal.getName());
+		model.addAttribute("username", user.getName());
 
 		return "user/user_dashboard"; // This loads src/main/resources/templates/user/dashboard.html
 	}
