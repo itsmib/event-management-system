@@ -6,11 +6,10 @@ import com.cts.EventManagementSystem.model.Event;
 
 import com.cts.EventManagementSystem.model.UserRegistration;
 
-import com.cts.EventManagementSystem.repository.BookingRepository;
-
 import com.cts.EventManagementSystem.repository.EventRepository;
 
 import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
+import com.cts.EventManagementSystem.service.BookingService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -42,7 +41,7 @@ public class BookingController {
 	private EventRepository eventRepo;
 
 	@Autowired
-	private BookingRepository bookingRepo;
+	private BookingService bookingService;
 
 	@Autowired
 	private UserRegistrationRepository userRepo;
@@ -72,7 +71,7 @@ public class BookingController {
 			booking.setEvent(event);
 			booking.setUser(user);
 			booking.setBookingDate(LocalDate.now()); // Store today's date as booking date
-			bookingRepo.save(booking);
+			bookingService.save(booking);
 			event.setTotalTickets(event.getTotalTickets() - ticketCount);
 			eventRepo.save(event);
 			String emailContent = "Dear " + user.getName() + ",\n\n" +
@@ -126,7 +125,7 @@ public class BookingController {
 	@GetMapping("/bookings")
 	public String viewMyBookings(Model model, Principal principal) {
 		UserRegistration user = userRepo.findByEmail(principal.getName());
-		List<Booking> bookings = bookingRepo.findByUser(user);
+		List<Booking> bookings = bookingService.findByUser(user);
 		model.addAttribute("bookings", bookings);
 		return "user/my_bookings";
 	}
@@ -134,7 +133,7 @@ public class BookingController {
 	@PostMapping("/cancel/{id}")
 	public String cancelBooking(@PathVariable("id") Long bookingId, Principal principal) {
 		// Fetch the booking by ID
-		Booking booking = bookingRepo.findById(bookingId)
+		Booking booking = bookingService.findById(bookingId)
 				.orElseThrow(() -> new IllegalArgumentException("Invalid booking ID: " + bookingId));
 		// Ensure only the user who made the booking can cancel it
 		String userEmail = principal.getName();
@@ -145,7 +144,7 @@ public class BookingController {
 		event.setTotalTickets(event.getTotalTickets() + booking.getTotalBooking());
 		eventRepo.save(event);
 		// Delete the booking
-		bookingRepo.delete(booking);
+		bookingService.delete(booking);
 		// Redirect back to the bookings page
 		return "redirect:/user/bookings";
 	}
