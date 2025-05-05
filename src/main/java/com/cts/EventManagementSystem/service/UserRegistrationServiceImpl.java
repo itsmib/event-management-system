@@ -1,5 +1,7 @@
 package com.cts.EventManagementSystem.service;
  
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,5 +24,10 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
     public UserRegistration findByEmail(String email) {
         return repo.findByEmail(email);
     }
+
+	@Override
+	public List<UserRegistration> findByRole(String role) {
+		return repo.findByRole(role);
+	}
     
 }

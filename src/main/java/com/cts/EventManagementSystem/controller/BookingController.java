@@ -2,14 +2,15 @@ package com.cts.EventManagementSystem.controller;
 
 import com.cts.EventManagementSystem.model.Booking;
 
+
 import com.cts.EventManagementSystem.model.Event;
 
 import com.cts.EventManagementSystem.model.UserRegistration;
 
-import com.cts.EventManagementSystem.repository.EventRepository;
 
 import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
 import com.cts.EventManagementSystem.service.BookingService;
+import com.cts.EventManagementSystem.service.EventService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -22,11 +23,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 @Controller
 
@@ -38,7 +36,7 @@ public class BookingController {
 	JavaMailSender mailSender;
 
 	@Autowired
-	private EventRepository eventRepo;
+	private EventService eventService;
 
 	@Autowired
 	private BookingService bookingService;
@@ -49,7 +47,7 @@ public class BookingController {
 	@GetMapping("/event-details/{eventId}")
 	public String viewEventDetails(@PathVariable Long eventId, Model model, Principal principal) {
 		// Fetch the event using the ID
-		Event event = eventRepo.findById(eventId).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
+		Event event = eventService.findById(eventId).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
 		UserRegistration user = userRepo.findByEmail(principal.getName());
 		model.addAttribute("user", user);
 		// Add event details to the model
@@ -60,7 +58,7 @@ public class BookingController {
 	@PostMapping("/book-event/{eventId}")
 	public String bookEvent(@PathVariable Long eventId, Principal principal, @RequestParam int ticketCount) {
 		// Fetch the event using the ID
-		Event event = eventRepo.findById(eventId).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
+		Event event = eventService.findById(eventId).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
 		// Fetch the user who is booking the event
 		UserRegistration user = userRepo.findByEmail(principal.getName());
 		UserRegistration admin = userRepo.findByEmail(event.getOrganizer().getEmail());
@@ -73,7 +71,7 @@ public class BookingController {
 			booking.setBookingDate(LocalDate.now()); // Store today's date as booking date
 			bookingService.save(booking);
 			event.setTotalTickets(event.getTotalTickets() - ticketCount);
-			eventRepo.save(event);
+			eventService.save(event);
 			String emailContent = "Dear " + user.getName() + ",\n\n" +
 
 					"Thank you for booking your spot at " + event.getName() + "!\n\n" +
@@ -142,7 +140,7 @@ public class BookingController {
 		}
 		Event event = booking.getEvent();
 		event.setTotalTickets(event.getTotalTickets() + booking.getTotalBooking());
-		eventRepo.save(event);
+		eventService.save(event);
 		// Delete the booking
 		bookingService.delete(booking);
 		// Redirect back to the bookings page

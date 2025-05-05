@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cts.EventManagementSystem.model.Booking;
+import com.cts.EventManagementSystem.model.Event;
 import com.cts.EventManagementSystem.model.UserRegistration;
 import com.cts.EventManagementSystem.repository.BookingRepository;
 
@@ -34,6 +35,11 @@ public class BookingServiceImpl implements BookingService {
 	@Override
 	public void delete(Booking booking) {
 		bookingRepo.delete(booking);
+	}
+
+	@Override
+	public List<Booking> findByEvent(Event event) {
+		return bookingRepo.findByEvent(event);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.cts.EventManagementSystem.controller;
 
 import java.io.IOException;
+
 import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
@@ -21,28 +22,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.cts.EventManagementSystem.model.Booking;
 import com.cts.EventManagementSystem.model.Event;
 import com.cts.EventManagementSystem.model.UserRegistration;
-import com.cts.EventManagementSystem.repository.BookingRepository;
-import com.cts.EventManagementSystem.repository.EventRepository;
-import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
+import com.cts.EventManagementSystem.service.BookingService;
+import com.cts.EventManagementSystem.service.EventService;
+import com.cts.EventManagementSystem.service.UserRegistrationService;
 
 @Controller
 public class EventController {
 	@Autowired
-	private EventRepository eventRepository;
+	private EventService eventService;
 
 	@Autowired
-	private UserRegistrationRepository userRepo;
+	private UserRegistrationService userService;
 
 	@Autowired
-	private BookingRepository bookingRepo;
+	private BookingService bookingService;
 
 	@GetMapping("/user/events")
 	public String viewUpcomingEvents(Model model) {
-		List<Event> events = eventRepository.findByEventDateAfterOrderByEventDateAsc(LocalDate.now());
+		List<Event> events = eventService.findByEventDateAfterOrderByEventDateAsc(LocalDate.now());
 		model.addAttribute("events", events);
 		return "user/view_events";
 	}
@@ -50,7 +49,7 @@ public class EventController {
 	@GetMapping("/event/image/{id}")
 	@ResponseBody
 	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
-		Event event = eventRepository.findById(id).orElse(null);
+		Event event = eventService.findById(id).orElse(null);
 		if (event != null && event.getImage() != null) {
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.IMAGE_JPEG); // or PNG based on your input
@@ -73,7 +72,7 @@ public class EventController {
 
 	@GetMapping("/user/dashboard")
 	public String userDashboard(Model model, Principal principal) {
-		UserRegistration user = userRepo.findByEmail(principal.getName());
+		UserRegistration user = userService.findByEmail(principal.getName());
 		model.addAttribute("username", user.getName());
 
 		return "user/user_dashboard"; // This loads src/main/resources/templates/user/dashboard.html
@@ -82,11 +81,11 @@ public class EventController {
 	@GetMapping("/admin/dashboard")
 		@PreAuthorize("hasRole('ADMIN')")
 		public String showAdminDashboard(Model model, Principal principal) {
-			List<Event> event = eventRepository.findByOrganizerEmail(principal.getName());
-			List<UserRegistration> user = userRepo.findByRole("USER");
+			List<Event> event = eventService.findByOrganizerEmail(principal.getName());
+			List<UserRegistration> user = userService.findByRole("USER");
 			int bs = 0;
 			for(Event ev : event) {
-				bs = bs + bookingRepo.findByEvent(ev).size();
+				bs = bs + bookingService.findByEvent(ev).size();
 			}
 			model.addAttribute("totalEvent", event.size());
 			model.addAttribute("totalUsers", user.size());
@@ -108,9 +107,9 @@ public class EventController {
 		if (!file.isEmpty()) {
 			event.setImage(file.getBytes());
 		}
-		UserRegistration admin = userRepo.findByEmail(principal.getName());
+		UserRegistration admin = userService.findByEmail(principal.getName());
 		event.setOrganizer(admin);
-		eventRepository.save(event);
+		eventService.save(event);
 		return "redirect:/admin/my-events";
 	}
 
@@ -119,9 +118,9 @@ public class EventController {
 		// Get currently logged-in admin's email
 		String email = principal.getName();
 		// Find the admin user
-		UserRegistration organizer = userRepo.findByEmail(email);
+		UserRegistration organizer = userService.findByEmail(email);
 		// Fetch events created by this admin
-		List<Event> myEvents = eventRepository.findByOrganizer(organizer);
+		List<Event> myEvents = eventService.findByOrganizer(organizer);
 		// Pass the list to the view
 		model.addAttribute("myEvents", myEvents);
 		return "admin/manage_events"; // Corresponds to admin_my_events.html
@@ -130,7 +129,7 @@ public class EventController {
 	@GetMapping("/admin/edit-event/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public String showEditEventForm(@PathVariable Long id, Model model, Principal principal) {
-		Event event = eventRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
+		Event event = eventService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
 		model.addAttribute("event", event);
 		return "admin/edit_event";
 	}
@@ -141,13 +140,13 @@ public class EventController {
 
 		// 1. Load the existing event
 
-		Event existing = eventRepository.findById(id)
+		Event existing = eventService.findById(id)
 
 				.orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
 
 		// 2. Security check
 
-		UserRegistration admin = userRepo.findByEmail(principal.getName());
+		UserRegistration admin = userService.findByEmail(principal.getName());
 
 		if (!existing.getOrganizer().equals(admin)) {
 
@@ -171,7 +170,7 @@ public class EventController {
 
 		// 4. Save—organizer stays intact
 
-		eventRepository.save(existing);
+		eventService.save(existing);
 
 		return "redirect:/admin/my-events";
 
@@ -180,12 +179,12 @@ public class EventController {
 	@PostMapping("/admin/delete-event/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
 	public String deleteEvent(@PathVariable Long id, Principal principal) {
-		Event event = eventRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
-		UserRegistration admin = userRepo.findByEmail(principal.getName());
+		Event event = eventService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
+		UserRegistration admin = userService.findByEmail(principal.getName());
 		if (!event.getOrganizer().equals(admin)) {
 			throw new SecurityException("Not authorized");
 		}
-		eventRepository.delete(event);
+		eventService.delete(event);
 		return "redirect:/admin/my-events";
 	}
 }

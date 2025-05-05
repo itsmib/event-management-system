@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.cts.EventManagementSystem.model.Booking;
+import com.cts.EventManagementSystem.model.Event;
 import com.cts.EventManagementSystem.model.UserRegistration;
 
 @Service
@@ -18,5 +19,7 @@ public interface BookingService {
 	Optional<Booking> findById(Long bookingId);
 	
 	void delete(Booking booking);
+	
+	List<Booking> findByEvent(Event event);
 
 }
