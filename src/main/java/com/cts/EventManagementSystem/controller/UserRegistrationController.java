@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -90,6 +91,36 @@ public class UserRegistrationController {
 			model.addAttribute("error", "Invalid OTP");
 			return "enter-otp";
 		}
+	}
+	
+	@GetMapping("/admin/edit_profile")
+	@PreAuthorize("hasRole('ADMIN')")
+	public String edit_profile(Principal principal,Model model) {
+		UserRegistration user = userService.findByEmail(principal.getName());
+		model.addAttribute("user",user);
+		return "admin/edit_profile";
+	}
+	
+	@PostMapping("/admin/update_profile")
+	@PreAuthorize("hasRole('ADMIN')")
+	public String processUpdate(@ModelAttribute("user") UserRegistration usersubmitted) {
+		userService.save(usersubmitted);
+		return "redirect:/admin/dashboard";
+	}
+	
+	@GetMapping("/user/edit_profile")
+	@PreAuthorize("hasRole('USER')")
+	public String user_edit_profile(Principal principal,Model model) {
+		UserRegistration user = userService.findByEmail(principal.getName());
+		model.addAttribute("user",user);
+		return "user/edit_profile";
+	}
+	
+	@PostMapping("/user/update_profile")
+	@PreAuthorize("hasRole('USER')")
+	public String processUpdateUser(@ModelAttribute("user") UserRegistration usersubmitted) {
+		userService.save(usersubmitted);
+		return "redirect:/user/dashboard";
 	}
 
 }
