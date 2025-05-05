@@ -94,5 +94,25 @@ public class Event {
 		this.image = image;
 	}
 	
+	
+
+	public Event() {
+		
+	}
+
+	public Event(Long eventId, String name, String category, String location, LocalDate eventDate, String description,
+			LocalTime eventTime, byte[] image, UserRegistration organizer) {
+		super();
+		this.eventId = eventId;
+		this.name = name;
+		this.category = category;
+		this.location = location;
+		this.eventDate = eventDate;
+		this.description = description;
+		this.eventTime = eventTime;
+		this.image = image;
+		this.organizer = organizer;
+	}
+	
 
 }

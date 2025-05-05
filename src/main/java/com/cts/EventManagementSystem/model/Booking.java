@@ -59,5 +59,16 @@ public class Booking {
 	public void setBookingDate(LocalDate bookingDate) {
 		this.bookingDate = bookingDate;
 	}
+	
+
+	public Booking(Long bookingId, Event event, UserRegistration user, LocalDate bookingDate) {
+		super();
+		this.bookingId = bookingId;
+		this.event = event;
+		this.user = user;
+		this.bookingDate = bookingDate;
+	}
+	
+	
 
 }

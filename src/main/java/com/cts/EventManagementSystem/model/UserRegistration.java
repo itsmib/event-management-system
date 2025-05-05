@@ -67,4 +67,21 @@ public class UserRegistration {
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+	
+	public UserRegistration() {
+	}
+
+	public UserRegistration(Long userId, String name, String email, String password, String contactNumber,
+			String role) {
+		super();
+		this.userId = userId;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.contactNumber = contactNumber;
+		this.role = role;
+	}
+	
+	
 }
