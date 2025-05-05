@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            padding-top: 60px;
+            text-align: center;
+            background-image: url('/images/sumaid-pal-singh-bakshi-vq-A3vOlEr0-unsplash.jpg'); /* Added background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-gradient-purpleblue {
+            background-image: linear-gradient(to right, #805AD5, #4A5568);
+        }
+
+        .text-transparent {
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .member-card {
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .member-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .member-picture {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 9999px;
+            overflow: hidden;
+            border: 2px solid #4a5568;
+            position: relative;
+            margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .member-picture img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .social-icon {
+            color: #a0aec0;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .social-icon:hover {
+            color: #fff;
+            background-color: #4a5568;
+            border-radius: 0.375rem;
+            padding: 0.25rem;
+        }
+
+        .project-detail-card {
+            background-color: #1a202c;
+            border: 1px solid #2d3748;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            padding: 2rem;
+        }
+
+        .project-detail-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-list {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            space-y: 0.75rem;
+        }
+
+        .tech-badge {
+            background-color: #4a5568;
+            color: #a0aec0;
+            padding: 0.5rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            border: 1px solid #2d3748;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-header {
+            background-color: #000000;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand.header-brand h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #eee;
+        }
+
+        .site-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .site-nav ul li {
+            margin-left: 20px;
+        }
+
+        .site-nav ul li a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .site-nav ul li a:hover {
+            color: #ddd;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .about-us-container {
+            padding-top: 60px;
+            padding-bottom: 20px;
+            min-height: calc(100vh - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .team-section {
+            margin-bottom: 5rem;
+            width: 100%;
+        }
+
+        .project-section {
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: #a0aec0;
+            margin-bottom: 1.25rem;
+            text-align: center;
+        }
+
+        .member-bio {
+            font-size: 1.1rem;
+            color: #d2d6dc;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: #d2d6dc;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            line-height: 1.75;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            background-image: linear-gradient(to right, #805AD5, #4A5568);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .demo-section {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: #1a202c;
+            border-radius: 0.5rem;
+            border: 1px solid #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div class="brand header-brand">
+                <h1 class="m-0">
+                    <a href="/">
+                        <svg width="32" height="32" viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>EVMS</title>
+                            <defs>
+                                <linearGradient x1="0%" y1="0%" y2="100%" id="logo-a">
+                                    <stop stop-color="#4353FF" offset="0%" />
+                                    <stop stop-color="#4353FF" stop-opacity=".32" offset="100%" />
+                                </linearGradient>
+                                <linearGradient x1="0%" y1="0%" y2="100%" id="logo-b">
+                                    <stop stop-color="#4353FF" offset="0%" />
+                                    <stop stop-color="#4353FF" stop-opacity=".32" offset="100%" />
+                                </linearGradient>
+                                <linearGradient x1="0%" y1="0%" y2="100%" id="logo-c">
+                                    <stop stop-color="#78F9FF" stop-opacity=".24" offset="0%" />
+                                    <stop stop-color="#43F1FF" offset="55.496%" />
+                                    <stop stop-color="#43F1FF" stop-opacity=".24" offset="100%" />
+                                </linearGradient>
+                            </defs>
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="M4 0h12v16H0V4a4 4 0 0 1 4-4z" fill="url(#logo-a)" />
+                                <path d="M16 16h16v12a4 4 0 0 1-4 4H16V16z" fill="url(#logo-b)" />
+                                <path d="M11.5 20.5H.5v1h10v10h1v-11z" stroke="url(#logo-c)"
+                                        transform="matrix(-1 0 0 1 12 0)" />
+                                <path d="M31.5.5h-11v1h10v10h1V.5z" stroke="url(#logo-c)"
+                                        transform="matrix(1 0 0 -1 0 12)" />
+                            </g>
+                        </svg>
+                    </a>
+                </h1>
+            </div>
+            <nav class="site-nav">
+                <ul class="header-nav list-reset">
+                    <li><a href="/">Home</a></li>
+                    <li><a th:href="@{/user/events}">Events</a></li>
+                    <li><a th:href="@{/about}">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="about-us-container">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h1 class="section-heading" th:text="${title}">About Us</h1>
+                <p class="text-gray-400 mt-4 text-lg">
+                    Meet the team behind this project and learn about our mission.
+                </p>
+            </div>
+
+            <section class="team-section">
+                <h2 class="section-heading">Our Team</h2>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3 mb-8" th:each="member : ${members}">
+                        <div class="member-card">
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <div class="member-picture">
+                                    <img th:src="${member.pictureUrl}" alt="${member.name}">
+                                </div>
+                                <h3 class="member-name" th:text="${member.name}">John Doe</h3>
+                                <p class="member-role" th:text="${member.role}">Project Lead</p>
+                                <p class="member-bio" th:text="${member.bio}">John is a passionate full-stack developer with a knack for creating user-friendly and efficient web applications.</p>
+                                <div class="d-flex gap-4 mt-auto">
+                                    <a th:href="${member.githubUrl}" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.3-.87 2.23a4 4 0 0 1-1.13 1.27v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                    </a>
+                                    <a th:href="${member.linkedinUrl}" target="_blank" rel="noopener noreferrer" class="social-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                    </a>
+                                    <a th:href="'mailto:' + ${member.email}" class="social-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><path d="M4 4h16c1.32 0 2.41.89 2.78 2.14l-8 9a1 1 0 0 1-1.56 0l-8-9A2.768 2.768 0 0 1 4 4z"></path><path d="M22 6.26v7.14a2 0 0 1-2 2H4a2 0 0 1-2-2V6.26"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2 class="section-heading">About the Project</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="project-detail-card">
+                            <div class="card-header">
+                                <h2 class="text-2xl font-semibold text-white">Event Management System</h2>
+                                <p class="text-sm text-gray-400">Role: Full Stack Development</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="project-description">
+                                    The Event Management System is a web application designed to streamline event organization, management, and attendance. It empowers event organizers to efficiently create, modify, and schedule events, while providing a user-friendly platform for attendees to discover, book tickets, and engage with event content.  The system aims to simplify the event lifecycle, from initial planning to post-event feedback.
+                                </p>
+                                <div class="mb-4">
+                                    <h4 class="text-lg font-semibold text-gray-200">Key Features</h4>
+                                    <ul class="feature-list">
+                                        <li class="text-gray-300"><span class="font-semibold">Event Management:</span> Creation, modification, and scheduling of events, including details like venue, date, time, and description.</li>
+                                        <li class="text-gray-300"><span class="font-semibold">User Authentication:</span> Secure registration and login functionality for both organizers and attendees.</li>
+                                        <li class="text-gray-300"><span class="font-semibold">Ticket Booking:</span> Online ticket sales, cancellation, and management, with support for various ticket types and pricing.</li>
+                                        <li class="text-gray-300"><span class="font-semibold">Notifications:</span> Automated event reminders and updates delivered via email or in-app notifications.</li>
+                                        <li class="text-gray-300"><span class="font-semibold">Feedback:</span> Event ratings and reviews, allowing attendees to share their experiences and provide valuable feedback to organizers.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-4">
+                                    <h4 class="text-lg font-semibold text-gray-200">Technologies Used</h4>
+                                    <div class="d-flex flex-wrap">
+                                        <span class="tech-badge">Thymeleaf</span>
+                                        <span class="tech-badge">CSS</span>
+                                        <span class="tech-badge">Bootstrap</span>
+                                        <span class="tech-badge">JavaScript</span>
+                                        <span class="tech-badge">Spring Boot</span>
+                                        <span class="tech-badge">Oracle SQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

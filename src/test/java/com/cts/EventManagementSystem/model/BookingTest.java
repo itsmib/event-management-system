@@ -19,13 +19,15 @@ public class BookingTest {
         UserRegistration user = new UserRegistration();
         user.setUserId(2L);
         LocalDate bookingDate = LocalDate.now();
+        int totalBooking = 20;
 
-        Booking booking = new Booking(event, user, bookingDate);
+        Booking booking = new Booking(event, user, bookingDate,totalBooking);
 
         assertEquals(event, booking.getEvent());
         assertEquals(user, booking.getUser());
         assertEquals(bookingDate, booking.getBookingDate());
-    }
+        assertEquals(20, booking.getTotalBooking());
+     }
 
     @Test
     void testAllArgsConstructor() {

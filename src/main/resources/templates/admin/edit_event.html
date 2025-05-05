@@ -142,6 +142,7 @@
             <li><a href="/admin/dashboard"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
             <li><a href="/admin/create-event"><i class="bi bi-plus-circle"></i>Add Event</a></li>
             <li><a href="/admin/my-events"><i class="bi bi-calendar-event"></i>Manage Events</a></li>
+            <li><a href="/admin/edit_profile"><i class="bi bi-person-fill"></i>Edit Profile</a></li>
             <li>
                 <a href="#" onclick="event.preventDefault(); document.getElementById('logoutSidebarForm').submit();">
                     <i class="bi bi-box-arrow-left"></i>Logout
@@ -185,6 +186,12 @@
                     <textarea id="description" th:field="*{description}"
                               class="form-control" rows="4" placeholder="Enter event description"
                               required></textarea>
+                </div>
+                 <div class="mb-3">
+                    <label for="imageFile" class="form-label">Event Picture</label>
+                    <input type="file" class="form-control" id="imageFile" name="imageFile"
+                           accept="image/*">
+                    
                 </div>
                 <button type="submit" class="btn btn-primary">Update Event</button>
                 <a href="/admin/my-events" class="btn btn-secondary ms-2">Cancel</a>

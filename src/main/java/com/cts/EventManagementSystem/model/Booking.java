@@ -17,15 +17,30 @@ public class Booking {
 	@JoinColumn(name = "user_id", nullable = false)
 	private UserRegistration user;
 	private LocalDate bookingDate;
+	
+	private int totalBooking;
+	
+	
 
-	// Constructors, getters, setters
+	
+	
 	public Booking() {
 	}
 
-	public Booking(Event event, UserRegistration user, LocalDate bookingDate) {
+	public Booking(Event event, UserRegistration user, LocalDate bookingDate, int totalBooking) {
+		super();
 		this.event = event;
 		this.user = user;
 		this.bookingDate = bookingDate;
+		this.totalBooking = totalBooking;
+	}
+
+	public int getTotalBooking() {
+		return totalBooking;
+	}
+
+	public void setTotalBooking(int totalBooking) {
+		this.totalBooking = totalBooking;
 	}
 
 	public Long getBookingId() {

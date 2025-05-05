@@ -11,6 +11,31 @@
 body {
 	background-color: #000000;
 	color: #ffffff;
+	background-image: url('/images/background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 70px;
+	min-height: 100vh;
+}
+
+.event-wrapper {
+	background-color: rgba(26, 26, 26, 0.8);
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+	width: 95%;
+	max-width: 1000px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
 }
 
 .card {
@@ -21,6 +46,11 @@ body {
 .card-header {
 	background-color: #505fff;
 	color: #ffffff;
+	border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+	padding: 20px;
 }
 
 .btn-success {
@@ -37,84 +67,223 @@ body {
 	background-color: #505fff;
 	color: #ffffff;
 }
+
+.site-header {
+	background-color: #000000;
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.brand.header-brand h1 {
+	margin: 0;
+	font-size: 1.8rem;
+	color: #eee;
+}
+
+.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.site-nav ul li {
+	margin-left: 20px;
+}
+
+.site-nav ul li a {
+	color: #eee;
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: color 0.3s ease;
+}
+
+.site-nav ul li a:hover {
+	color: #ddd;
+}
 </style>
 </head>
 <body>
-	<div class="container my-5">
-		<div class="card shadow-sm">
-			<div class="card-header text-white">
-				<h2 class="mb-0" th:text="${event.name}">Event Name</h2>
+	<header class="site-header">
+		<div class="site-header-inner">
+			<div class="brand header-brand">
+				<h1 class="m-0">
+					<a href="/"> <svg width="32" height="32" viewBox="0 0 32 32"
+							xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="0%" y1="0%" y2="100%" id="logo-a">
+            <stop stop-color="#4353FF" offset="0%" />
+            <stop stop-color="#4353FF" stop-opacity=".32" offset="100%" />
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" y2="100%" id="logo-b">
+            <stop stop-color="#4353FF" offset="0%" />
+            <stop stop-color="#4353FF" stop-opacity=".32" offset="100%" />
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" y2="100%" id="logo-c">
+            <stop stop-color="#78F9FF" stop-opacity=".24" offset="0%" />
+            <stop stop-color="#43F1FF" offset="55.496%" />
+            <stop stop-color="#43F1FF" stop-opacity=".24" offset="100%" />
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M4 0h12v16H0V4a4 4 0 0 1 4-4z" fill="url(#logo-a)" />
+        <path d="M16 16h16v12a4 4 0 0 1-4 4H16V16z" fill="url(#logo-b)" />
+        <path d="M11.5 20.5H.5v1h10v10h1v-11z" stroke="url(#logo-c)"
+								transform="matrix(-1 0 0 1 12 0)" />
+        <path d="M31.5.5h-11v1h10v10h1V.5z" stroke="url(#logo-c)"
+								transform="matrix(1 0 0 -1 0 12)" />
+    </g>
+</svg>
+					</a>
+				</h1>
 			</div>
-			<div class="card-body">
-				<div class="row mb-3">
-					<div class="col-md-6">
-						<p>
-							<strong>Category:</strong> <span th:text="${event.category}">Category</span>
-						</p>
-						<p>
-							<strong>Location:</strong> <span th:text="${event.location}">Location</span>
-						</p>
-					</div>
-					<div class="col-md-6">
-						<p>
-							<strong>Date:</strong> <span
-								th:text="${#temporals.format(event.eventDate, 'dd MMM yyyy')}">Date</span>
-						</p>
-						<p>
-							<strong>Time:</strong> <span
-								th:text="${#temporals.format(event.eventTime, 'hh:mm a')}">Time</span>
-						</p>
-					</div>
+			<nav class="site-nav">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a th:href="@{/user/events}">Events</a></li>
+					<li><a th:href="@{/about}">About</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main class="main-container">
+		<div class="event-wrapper">
+			<div class="card">
+				<div class="card-header text-white">
+					<h2 class="mb-0" th:text="${event.name}">Event Name</h2>
 				</div>
-				<hr />
-				<div class="mb-4">
-					<h5>Description</h5>
-					<p th:text="${event.description}">Event description goes here.</p>
+				<div class="card-body">
+					<div class="row mb-3">
+						<div class="col-md-6">
+							<p>
+								<strong>Category:</strong> <span th:text="${event.category}">Category</span>
+							</p>
+							<p>
+								<strong>Location:</strong> <span th:text="${event.location}">Location</span>
+							</p>
+						</div>
+						<div class="col-md-6">
+							<p>
+								<strong>Date:</strong> <span
+									th:text="${#temporals.format(event.eventDate, 'dd MMM')}">Date</span>
+							</p>
+							<p>
+								<strong>Time:</strong> <span
+									th:text="${#temporals.format(event.eventTime, 'hh:mm a')}">Time</span>
+							</p>
+						</div>
+					</div>
+					<hr />
+					<div class="mb-4">
+						<h5>Description</h5>
+						<p th:text="${event.description}">Event description goes here.</p>
+					</div>
+
+					<div class="mb-3">
+						<strong class="me-2">Tickets:</strong>
+						<div class="input-group" style="width: 150px;">
+							<button class="btn btn-outline-secondary" type="button"
+								id="minus">-</button>
+							<input type="number" id="ticketCount"
+								class="form-control text-center" value="1" min="1"
+								aria-label="Number of tickets" aria-describedby="minus plus">
+							<button class="btn btn-outline-secondary" type="button" id="plus">
+								+</button>
+						</div>
+					</div>
+
+					<p>
+						<strong>Total Amount:</strong> <span id="totalAmount">500.00</span>
+						INR
+					</p>
+
+					<form id="bookingForm"
+						th:action="@{/user/book-event/{eventId}(eventId=${event.eventId})}"
+						method="post">
+						<input type="hidden" name="ticketCount" id="hiddenTicketCount"
+							value="1">
+						<button id="book-button" onClick="payNow()" type="button"
+							class="btn btn-success btn-lg">Book This Event</button>
+						<a href="/user/events"
+							class="btn btn-outline-secondary btn-lg ms-2">Back to Events</a>
+					</form>
 				</div>
-				<form id="bookingForm"
-					th:action="@{/user/book-event/{eventId}(eventId=${event.eventId})}"
-					method="post">
-					<button id="book-button" onClick="payNow()" type="button"
-						class="btn btn-success btn-lg">Book This Event</button>
-					<a href="/user/events"
-						class="btn btn-outline-secondary btn-lg ms-2">Back to Events</a>
-				</form>
 			</div>
 		</div>
-	</div>
+	</main>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<script th:inline="javascript">
-		function payNow() {
-			let eventName = /*[[${event.name}]]*/ "Default Event Name";
-			let name = /*[[${user.name}]]*/ "Unknow user";
-			let phoneNumber = /*[[${user.contactNumber}]]*/ "Unknow user";
-			let email = /*[[${user.email}]]*/ "Unknow user";
-			var options = {
-				"key" : "rzp_test_a7byZxfSHiEoYm", // Replace with your Razorpay Key
-				"amount" : "60000", // example amount in paise (₹500)
-				"currency" : "INR",
-				"name" : eventName + " Booking",
-				"description" : "Book event after payment",
-				"handler" : function(response) {
-					// On successful payment, proceed with form submission
-					alert("Payment successful. ID: "
-							+ response.razorpay_payment_id);
-					// Now submit the form after payment
-					document.getElementById("bookingForm").submit();
-				},
-				"prefill" : {
-					"name" : "name",
-					"email" : "email",
-					"contact" : "phoneNumber"
-				},
-				"theme" : {
-					"color" : "#0c5460"
-				}
-			};
-			var rzp = new Razorpay(options);
-			rzp.open();
-		}
-	</script>
+	<script>
+        const ticketCountInput = document.getElementById('ticketCount');
+        const plusButton = document.getElementById('plus');
+        const minusButton = document.getElementById('minus');
+        const totalAmountSpan = document.getElementById('totalAmount');
+        const hiddenTicketCountInput = document.getElementById('hiddenTicketCount');
+        const ticketPrice = 500;
+
+        function updateAmount() {
+            const ticketCount = parseInt(ticketCountInput.value);
+            if(isNaN(ticketCount) || ticketCount < 1) {
+                ticketCount = 1;
+                ticketCountInput.value = 1;
+            }
+            const totalAmount = ticketCount * ticketPrice;
+            totalAmountSpan.textContent = totalAmount.toFixed(2);
+            hiddenTicketCountInput.value = ticketCount;
+        }
+
+        plusButton.addEventListener('click', () => {
+            ticketCountInput.value = parseInt(ticketCountInput.value) + 1;
+            updateAmount();
+        });
+
+        minusButton.addEventListener('click', () => {
+            ticketCountInput.value = Math.max(parseInt(ticketCountInput.value) - 1, 1);
+            updateAmount();
+        });
+
+        ticketCountInput.addEventListener('change', () => {
+            updateAmount();
+        });
+        function payNow() {
+            const ticketCount = parseInt(ticketCountInput.value);
+            const amount = ticketCount * ticketPrice * 100;
+            var options = {
+                "key": "rzp_test_gp6ZTPZrFpeDTg",
+                "amount": amount,
+                "currency": "INR",
+                "name": "Event Booking",
+                "description": "Book event after payment",
+                "handler": function (response) {
+                    alert("Payment successful. ID: " + response.razorpay_payment_id);
+                    document.getElementById("bookingForm").submit();
+                },
+                "prefill": {
+                    "name": "John Doe",
+                    "email": "john@example.com",
+                    "contact": "9999999999"
+                },
+                "theme": {
+                    "color": "#0c5460"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        }
+    </script>
 </body>
 </html>

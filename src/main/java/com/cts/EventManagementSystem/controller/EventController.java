@@ -1,34 +1,33 @@
 package com.cts.EventManagementSystem.controller;
 
-import com.cts.EventManagementSystem.model.Event;
-import com.cts.EventManagementSystem.model.UserRegistration;
-import com.cts.EventManagementSystem.repository.EventRepository;
-import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
+import java.io.IOException;
+import java.security.Principal;
+import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.security.Principal;
-import java.time.LocalDate;
-import java.util.List;
+import com.cts.EventManagementSystem.model.Booking;
+import com.cts.EventManagementSystem.model.Event;
+import com.cts.EventManagementSystem.model.UserRegistration;
+import com.cts.EventManagementSystem.repository.BookingRepository;
+import com.cts.EventManagementSystem.repository.EventRepository;
+import com.cts.EventManagementSystem.repository.UserRegistrationRepository;
 
 @Controller
 public class EventController {
@@ -38,24 +37,27 @@ public class EventController {
 	@Autowired
 	private UserRegistrationRepository userRepo;
 
+	@Autowired
+	private BookingRepository bookingRepo;
+
 	@GetMapping("/user/events")
 	public String viewUpcomingEvents(Model model) {
 		List<Event> events = eventRepository.findByEventDateAfterOrderByEventDateAsc(LocalDate.now());
-		System.out.println(events);
 		model.addAttribute("events", events);
 		return "user/view_events";
 	}
+
 	@GetMapping("/event/image/{id}")
 	@ResponseBody
 	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
-	   Event event = eventRepository.findById(id).orElse(null);
-	   if (event != null && event.getImage() != null) {
-	       HttpHeaders headers = new HttpHeaders();
-	       headers.setContentType(MediaType.IMAGE_JPEG); // or PNG based on your input
-	       return new ResponseEntity<>(event.getImage(), headers, HttpStatus.OK);
-	   } else {
-	       return ResponseEntity.notFound().build();
-	   }
+		Event event = eventRepository.findById(id).orElse(null);
+		if (event != null && event.getImage() != null) {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.IMAGE_JPEG); // or PNG based on your input
+			return new ResponseEntity<>(event.getImage(), headers, HttpStatus.OK);
+		} else {
+			return ResponseEntity.notFound().build();
+		}
 	}
 
 	@GetMapping("/dashboard")
@@ -71,15 +73,26 @@ public class EventController {
 
 	@GetMapping("/user/dashboard")
 	public String userDashboard(Model model, Principal principal) {
-		model.addAttribute("username", principal.getName());
+		UserRegistration user = userRepo.findByEmail(principal.getName());
+		model.addAttribute("username", user.getName());
+
 		return "user/user_dashboard"; // This loads src/main/resources/templates/user/dashboard.html
 	}
 
 	@GetMapping("/admin/dashboard")
-	@PreAuthorize("hasRole('ADMIN')")
-	public String showAdminDashboard() {
-		return "admin/admin_dashboard"; // Renamed view
-	}
+		@PreAuthorize("hasRole('ADMIN')")
+		public String showAdminDashboard(Model model, Principal principal) {
+			List<Event> event = eventRepository.findByOrganizerEmail(principal.getName());
+			List<UserRegistration> user = userRepo.findByRole("USER");
+			int bs = 0;
+			for(Event ev : event) {
+				bs = bs + bookingRepo.findByEvent(ev).size();
+			}
+			model.addAttribute("totalEvent", event.size());
+			model.addAttribute("totalUsers", user.size());
+			model.addAttribute("confirmedBookings", bs);
+			return "admin/admin_dashboard"; // Renamed view
+		}
 
 	@GetMapping("/admin/create-event")
 	@PreAuthorize("hasRole('ADMIN')")
@@ -90,7 +103,8 @@ public class EventController {
 
 	@PostMapping("/admin/save-event")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String saveEvent(@RequestParam("imageFile") MultipartFile file, @ModelAttribute("event") Event event, Principal principal) throws IOException {
+	public String saveEvent(@RequestParam("imageFile") MultipartFile file, @ModelAttribute("event") Event event,
+			Principal principal) throws IOException {
 		if (!file.isEmpty()) {
 			event.setImage(file.getBytes());
 		}
@@ -120,47 +134,48 @@ public class EventController {
 		model.addAttribute("event", event);
 		return "admin/edit_event";
 	}
+
 	@PostMapping("/admin/edit-event/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String updateEvent( @PathVariable Long id, @ModelAttribute("event") Event submitted, Principal principal) {
+	public String updateEvent(@PathVariable Long id, @ModelAttribute("event") Event submitted, Principal principal) {
 
-	    // 1. Load the existing event
+		// 1. Load the existing event
 
-	    Event existing = eventRepository.findById(id)
+		Event existing = eventRepository.findById(id)
 
-	        .orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
+				.orElseThrow(() -> new IllegalArgumentException("Invalid event ID"));
 
-	    // 2. Security check
+		// 2. Security check
 
-	    UserRegistration admin = userRepo.findByEmail(principal.getName());
+		UserRegistration admin = userRepo.findByEmail(principal.getName());
 
-	    if (!existing.getOrganizer().equals(admin)) {
+		if (!existing.getOrganizer().equals(admin)) {
 
-	        throw new SecurityException("Not authorized");
+			throw new SecurityException("Not authorized");
 
-	    }
+		}
 
-	    // 3. Copy editable fields
+		// 3. Copy editable fields
 
-	    existing.setName(submitted.getName());
+		existing.setName(submitted.getName());
 
-	    existing.setCategory(submitted.getCategory());
+		existing.setCategory(submitted.getCategory());
 
-	    existing.setLocation(submitted.getLocation());
+		existing.setLocation(submitted.getLocation());
 
-	    existing.setEventDate(submitted.getEventDate());
+		existing.setEventDate(submitted.getEventDate());
 
-	    existing.setEventTime(submitted.getEventTime());
+		existing.setEventTime(submitted.getEventTime());
 
-	    existing.setDescription(submitted.getDescription());
+		existing.setDescription(submitted.getDescription());
 
-	    // 4. Save—organizer stays intact
+		// 4. Save—organizer stays intact
 
-	    eventRepository.save(existing);
+		eventRepository.save(existing);
 
-	    return "redirect:/admin/my-events";
+		return "redirect:/admin/my-events";
 
-	} 
+	}
 
 	@PostMapping("/admin/delete-event/{id}")
 	@PreAuthorize("hasRole('ADMIN')")
