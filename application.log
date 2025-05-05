@@ -1,0 +1,208 @@
+2025-05-05T11:52:07.352+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 15796 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-05-05T11:52:07.356+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-05T11:52:07.478+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-05-05T11:52:07.489+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-05-05T11:52:07.490+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-05T11:52:07.490+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-05T11:52:09.622+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05T11:52:09.931+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 276 ms. Found 3 JPA repository interfaces.
+2025-05-05T11:52:12.269+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-05-05T11:52:12.327+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-05T11:52:12.328+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05T11:52:12.524+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-05T11:52:12.526+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5034 ms
+2025-05-05T11:52:13.645+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05T11:52:13.843+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05T11:52:13.955+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-05T11:52:14.722+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05T11:52:14.791+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-05T11:52:14.801+05:30  WARN 15796 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-05-05T11:52:16.491+05:30  WARN 15796 --- [EventManagementSystem] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1017, SQLState: 72000
+2025-05-05T11:52:16.492+05:30 ERROR 15796 --- [EventManagementSystem] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : ORA-01017: invalid username/password; logon denied
+
+2025-05-05T11:52:16.494+05:30  WARN 15796 --- [EventManagementSystem] [restartedMain] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [ORA-01017: invalid username/password; logon denied
+] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.4.jar:3.4.4]
+	at com.cts.EventManagementSystem.EventManagementSystemApplication.main(EventManagementSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.4.jar:3.4.4]
+Caused by: java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:509) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:456) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:451) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.processError(T4CTTIfun.java:1040) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.processError(T4CTTIoauthenticate.java:552) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:550) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:268) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:501) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:1292) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CTTIoauthenticate.doOAUTH(T4CTTIoauthenticate.java:1025) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:743) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:793) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:57) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:747) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:562) ~[ojdbc8-19.3.0.0.jar:19.3.0.0.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	... 38 common frames omitted
+
+2025-05-05T11:52:16.510+05:30 ERROR 15796 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-05-05T11:52:16.514+05:30  WARN 15796 --- [EventManagementSystem] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-05-05T11:52:16.528+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-05T11:52:16.569+05:30  INFO 15796 --- [EventManagementSystem] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-05T11:52:16.668+05:30 ERROR 15796 --- [EventManagementSystem] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.4.jar:3.4.4]
+	at com.cts.EventManagementSystem.EventManagementSystemApplication.main(EventManagementSystemApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.4.4.jar:3.4.4]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 18 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:392) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.11.Final.jar:6.6.11.Final]
+	... 33 common frames omitted
+
+2025-05-05T11:53:18.163+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Starting EventManagementSystemApplication using Java 21.0.5 with PID 1596 (C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system\target\classes started by 2392940 in C:\Users\2392940\OneDrive - Cognizant\Desktop\event-management-system)
+2025-05-05T11:53:18.168+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-05-05T11:53:18.304+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\ojdbc8\19.3.0.0\ojdbc8-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/ojdbc8/19.3.0.0/oraclepki.jar
+2025-05-05T11:53:18.305+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\2392940\.m2\repository\com\oracle\ojdbc\oraclepki\19.3.0.0\oraclepki-19.3.0.0.jar referenced one or more files that do not exist: file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/19.3.0.0/osdt_cert.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_core.jar,file:/C:/Users/2392940/.m2/repository/com/oracle/ojdbc/oraclepki/oracle.osdt/osdt_cert.jar
+2025-05-05T11:53:18.305+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-05T11:53:18.305+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-05T11:53:20.917+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-05T11:53:21.091+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 3 JPA repository interfaces.
+2025-05-05T11:53:22.750+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8083 (http)
+2025-05-05T11:53:22.810+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-05T11:53:22.811+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-05T11:53:22.903+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-05T11:53:22.904+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4597 ms
+2025-05-05T11:53:23.722+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-05T11:53:23.901+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-05T11:53:23.966+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-05T11:53:24.610+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-05T11:53:24.669+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-05T11:53:24.681+05:30  WARN 1596 --- [EventManagementSystem] [restartedMain] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2025-05-05T11:53:25.166+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@548eac79
+2025-05-05T11:53:25.169+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-05T11:53:25.375+05:30  WARN 1596 --- [EventManagementSystem] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 11.2.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-05T11:53:25.514+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-05T11:53:27.017+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.h.m.i.EntityInstantiatorPojoStandard   : HHH000182: No default (no-argument) constructor for class: com.cts.EventManagementSystem.model.Notification (class must be instantiated by Interceptor)
+2025-05-05T11:53:27.435+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-05T11:53:27.613+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-05T11:53:28.846+05:30  WARN 1596 --- [EventManagementSystem] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-05T11:53:28.979+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-05-05T11:53:28.980+05:30  WARN 1596 --- [EventManagementSystem] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-05-05T11:53:30.855+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-05T11:53:31.028+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8083 (http) with context path '/'
+2025-05-05T11:53:31.057+05:30  INFO 1596 --- [EventManagementSystem] [restartedMain] c.c.E.EventManagementSystemApplication   : Started EventManagementSystemApplication in 14.018 seconds (process running for 15.006)
+2025-05-05T11:53:45.493+05:30  INFO 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-05T11:53:45.493+05:30  INFO 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-05T11:53:45.496+05:30  INFO 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-05T11:53:45.663+05:30  INFO 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] c.c.E.controller.HomeController          : Accessing home page
+2025-05-05T11:53:45.667+05:30  INFO 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] c.c.E.controller.HomeController          : User is authenticated: anonymousUser
+2025-05-05T11:53:45.668+05:30  INFO 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] c.c.E.controller.HomeController          : Session ID: FABF02C0108247D1726C561F24AC2361
+2025-05-05T11:53:46.410+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-1][home] Deprecated unwrapped fragment expression "header :: header" found in template home, line 16, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T11:53:50.424+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-4] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-4][login] Deprecated unwrapped fragment expression "header :: header" found in template login, line 192, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T11:53:50.592+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-7] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-7][login] Deprecated unwrapped fragment expression "header :: header" found in template login, line 192, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T11:55:10.339+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-5] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-5][login] Deprecated unwrapped fragment expression "header :: header" found in template login, line 192, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T11:55:10.460+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-8][login] Deprecated unwrapped fragment expression "header :: header" found in template login, line 192, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T11:56:01.634+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-5] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-5][user/view_events] Deprecated unwrapped fragment expression "header :: header" found in template user/view_events, line 131, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T11:56:51.361+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-1][user/view_events] Deprecated unwrapped fragment expression "header :: header" found in template user/view_events, line 131, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T12:00:46.696+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-7] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-7][user/view_events] Deprecated unwrapped fragment expression "header :: header" found in template user/view_events, line 131, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2025-05-05T12:02:17.522+05:30  WARN 1596 --- [EventManagementSystem] [http-nio-8083-exec-5] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8083-exec-5][user/view_events] Deprecated unwrapped fragment expression "header :: header" found in template user/view_events, line 131, col 7. Please use the complete syntax of fragment expressions instead ("~{header :: header}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
