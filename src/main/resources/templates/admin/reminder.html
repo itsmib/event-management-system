@@ -169,45 +169,28 @@ h2 {
 	</div>
 
 	<div class="content">
-		<h2 class="mb-4">Manage My Events</h2>
+		<h2 class="mb-4">Reminder Sent</h2>
 		<div class="container my-5">
-			<div th:if="${myEvents.isEmpty()}">
+			<div th:if="${myNotification.isEmpty()}">
 				<div class="alert alert-info">You have not created any events
 					yet.</div>
 			</div>
-			<div th:if="${!myEvents.isEmpty()}">
+			<div th:if="${!myNotification.isEmpty()}">
 				<table class="table table-striped">
 					<thead class="table-dark">
 						<tr>
-							<th>Name</th>
-							<th>Date</th>
-							<th>Time</th>
-							<th>Actions</th>
+							<th>Event Name</th>
+							<th>Sent At</th>
+							<th>User Name</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="event : ${myEvents}">
-							<td th:text="${event.name}">Event</td>
+						<tr th:each="notification : ${myNotification}">
+							<td th:text="${notification.event.name}">Event</td>
 							<td
-								th:text="${#temporals.format(event.eventDate, 'dd MMM yyyy')}">Date</td>
-							<td th:text="${#temporals.format(event.eventTime, 'hh:mm a')}">Time</td>
-							<td><a
-								th:href="@{/admin/edit-event/{id}(id=${event.eventId})}"
-								class="btn btn-sm btn-primary me-2">Edit</a>
-								<form
-									th:action="@{/admin/delete-event/{id}(id=${event.eventId})}"
-									method="post" style="display: inline;"
-									onsubmit="return confirm('Delete this event?');">
-									<button type="submit" class="btn btn-sm btn-danger">Delete</button>
-								</form>
-								<form th:action="@{'/admin/send-reminders/' + ${event.eventId}}"
-									method="post" style="display: inline;">
-									<input type="hidden" th:name="${_csrf.parameterName}"
-										th:value="${_csrf.token}" />
-									<button type="submit" class="btn btn-warning">Send
-										Reminders</button>
-								</form>
-							</td>
+								th:text="${#temporals.format(notification.sentAt, 'dd-MM-yyyy HH:mm')}">Sent
+								At</td>
+							<td th:text="${notification.user.name}">Sent At</td>
 						</tr>
 					</tbody>
 				</table>
