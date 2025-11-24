@@ -45,7 +45,7 @@ The application allows users to register, log in, manage credentials securely, a
 |------|----------------|
 | Noorul Misbah | [@itsmib](https://github.com/itsmib) |
 | Meghraj Yelwande | [@meghraj-yelwande](https://github.com/meghraj-yelwande) |
-| Sameed Irfan | [@Sameed-irfan](https://github.com/Sameed-irfan) |
+| Sameed Irfan | [@SameedIrfan7](https://github.com/SameedIrfan7) |
 
 ---
 
