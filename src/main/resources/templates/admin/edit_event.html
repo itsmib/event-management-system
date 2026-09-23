@@ -42,7 +42,8 @@ body { background-color:#f8f9fa; }
             <div class="mb-3"><label class="form-label" for="location">Location</label><input class="form-control" id="location" name="location" th:value="${event.location}" required></div>
             <div class="mb-3"><label class="form-label" for="eventDate">Event Date</label><input type="date" class="form-control" id="eventDate" name="eventDate" th:value="${event.eventDate}" required></div>
             <div class="mb-3"><label class="form-label" for="eventTime">Event Time</label><input type="time" class="form-control" id="eventTime" name="eventTime" th:value="${event.eventTime}" required></div>
-            <div class="mb-3"><label class="form-label" for="totalTickets">Total Tickets</label><input type="number" min="0" class="form-control" id="totalTickets" name="totalTickets" th:value="${event.totalTickets}" required></div>
+            <div class="mb-3"><label class="form-label">Tickets Remaining</label><input type="number" class="form-control" th:value="${event.totalTickets}" disabled></div>
+            <div class="form-text mb-3">Remaining ticket inventory is managed by bookings and cannot be changed while editing the event.</div>
             <div class="mb-3"><label class="form-label" for="description">Description</label><textarea class="form-control" id="description" name="description" rows="4" th:text="${event.description}"></textarea></div>
             <div class="mb-3"><label class="form-label" for="imageFile">Replace Event Picture</label><input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*"></div>
 
