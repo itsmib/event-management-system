@@ -86,7 +86,6 @@ public class EventRestController {
             @RequestParam LocalDate eventDate,
             @RequestParam LocalTime eventTime,
             @RequestParam(required = false) String description,
-            @RequestParam(required = false) Integer totalTickets,
             @RequestParam(required = false) MultipartFile imageFile,
             Principal principal) throws IOException {
 
@@ -101,9 +100,6 @@ public class EventRestController {
         }
 
         applyEditableFields(existing, name, category, location, eventDate, eventTime, description);
-        if (totalTickets != null) {
-            existing.setTotalTickets(totalTickets);
-        }
         if (imageFile != null && !imageFile.isEmpty()) {
             existing.setImage(imageFile.getBytes());
         }
