@@ -4,17 +4,20 @@ import com.cts.EventManagementSystem.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.thymeleaf.extras.springsecurity6.dialect.SpringSecurityDialect;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 	@Autowired
 	private CustomUserDetailsService userDetailsService;
@@ -41,17 +44,21 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.authenticationProvider(authenticationProvider()).authorizeHttpRequests(auth -> auth.requestMatchers("/", "/home", "/about",// <--
-																														// permit
-																														// homepage
-				"/login", "/register", "/forgot-password", "/send-otp", "/enter-otp", "/verify-otp", "/css/**", "/js/**", "/images/**" // if serving images on
-																								// homepage
-		).permitAll().requestMatchers("/admin/**").hasRole("ADMIN").requestMatchers("/user/**").hasRole("USER")
+		http.authenticationProvider(authenticationProvider()).authorizeHttpRequests(auth -> auth
+				.requestMatchers("/", "/home", "/about", "/login", "/register", "/forgot-password", "/send-otp",
+						"/enter-otp", "/verify-otp", "/css/**", "/js/**", "/images/**")
+				.permitAll()
+				.requestMatchers(HttpMethod.POST, "/api/events/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.PUT, "/api/events/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.DELETE, "/api/events/**").hasRole("ADMIN")
+				.requestMatchers("/admin/**").hasRole("ADMIN")
+				.requestMatchers("/user/**").hasRole("USER")
 				.anyRequest().authenticated())
 				.formLogin(form -> form.loginPage("/login").successHandler(successHandler).permitAll())
 				.logout(logout -> logout.logoutSuccessUrl("/login?logout=true").permitAll());
 		return http.build();
 	}
+
 	@Bean
 	public SpringSecurityDialect springSecurityDialect() {
 		return new SpringSecurityDialect();
