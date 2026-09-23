@@ -39,9 +39,7 @@ public class EventRestController {
     @GetMapping("/upcoming")
     public List<EventResponse> getUpcomingEvents() {
         return eventService.findByEventDateAfterOrderByEventDateAsc(LocalDate.now())
-                .stream()
-                .map(EventResponse::from)
-                .toList();
+                .stream().map(EventResponse::from).toList();
     }
 
     @GetMapping("/{id}")
@@ -66,15 +64,14 @@ public class EventRestController {
             Principal principal) throws IOException {
 
         Event event = new Event();
-        applyEditableFields(event, name, category, location, eventDate, eventTime, description, totalTickets);
+        applyEditableFields(event, name, category, location, eventDate, eventTime, description);
+        event.setTotalTickets(totalTickets);
 
         if (imageFile != null && !imageFile.isEmpty()) {
             event.setImage(imageFile.getBytes());
         }
 
-        UserRegistration admin = userService.findByEmail(principal.getName());
-        event.setOrganizer(admin);
-
+        event.setOrganizer(userService.findByEmail(principal.getName()));
         Event saved = eventService.save(event);
         return ResponseEntity.status(HttpStatus.CREATED).body(EventResponse.from(saved));
     }
@@ -89,7 +86,7 @@ public class EventRestController {
             @RequestParam LocalDate eventDate,
             @RequestParam LocalTime eventTime,
             @RequestParam(required = false) String description,
-            @RequestParam int totalTickets,
+            @RequestParam(required = false) Integer totalTickets,
             @RequestParam(required = false) MultipartFile imageFile,
             Principal principal) throws IOException {
 
@@ -103,8 +100,10 @@ public class EventRestController {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
 
-        applyEditableFields(existing, name, category, location, eventDate, eventTime, description, totalTickets);
-
+        applyEditableFields(existing, name, category, location, eventDate, eventTime, description);
+        if (totalTickets != null) {
+            existing.setTotalTickets(totalTickets);
+        }
         if (imageFile != null && !imageFile.isEmpty()) {
             existing.setImage(imageFile.getBytes());
         }
@@ -130,32 +129,22 @@ public class EventRestController {
     }
 
     private void applyEditableFields(Event event, String name, String category, String location,
-            LocalDate eventDate, LocalTime eventTime, String description, int totalTickets) {
+            LocalDate eventDate, LocalTime eventTime, String description) {
         event.setName(name);
         event.setCategory(category);
         event.setLocation(location);
         event.setEventDate(eventDate);
         event.setEventTime(eventTime);
         event.setDescription(description);
-        event.setTotalTickets(totalTickets);
     }
 
     public record EventResponse(Long eventId, String name, String category, String location,
             LocalDate eventDate, LocalTime eventTime, String description, int totalTickets,
             String organizerName) {
-
         static EventResponse from(Event event) {
             String organizerName = event.getOrganizer() != null ? event.getOrganizer().getName() : null;
-            return new EventResponse(
-                    event.getEventId(),
-                    event.getName(),
-                    event.getCategory(),
-                    event.getLocation(),
-                    event.getEventDate(),
-                    event.getEventTime(),
-                    event.getDescription(),
-                    event.getTotalTickets(),
-                    organizerName);
+            return new EventResponse(event.getEventId(), event.getName(), event.getCategory(), event.getLocation(),
+                    event.getEventDate(), event.getEventTime(), event.getDescription(), event.getTotalTickets(), organizerName);
         }
     }
 }
