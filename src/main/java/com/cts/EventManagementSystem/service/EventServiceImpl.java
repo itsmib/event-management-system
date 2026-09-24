@@ -13,38 +13,37 @@ import com.cts.EventManagementSystem.repository.EventRepository;
 
 @Service
 public class EventServiceImpl implements EventService {
-	
-	@Autowired
-	EventRepository repo;
 
-	@Override
-	public List<Event> findByEventDateAfterOrderByEventDateAsc(LocalDate today) {
-		return repo.findByEventDateAfterOrderByEventDateAsc(today);
-	}
+    @Autowired
+    EventRepository repo;
 
-	@Override
-	public Optional<Event> findById(Long Id) {
-		return repo.findByEventId(Id);
-	}
+    @Override
+    public List<Event> findByEventDateAfterOrderByEventDateAsc(LocalDate today) {
+        return repo.findByEventDateAfterOrderByEventDateAsc(today);
+    }
 
-	@Override
-	public List<Event> findByOrganizerEmail(String email) {
-		return repo.findByOrganizerEmail(email);
-	}
+    @Override
+    public Optional<Event> findById(Long id) {
+        return repo.findByEventId(id);
+    }
 
-	@Override
-	public void save(Event event) {
-		repo.save(event);
-	}
+    @Override
+    public List<Event> findByOrganizerEmail(String email) {
+        return repo.findByOrganizerEmail(email);
+    }
 
-	@Override
-	public List<Event> findByOrganizer(UserRegistration user) {
-		return repo.findByOrganizer(user);
-	}
+    @Override
+    public Event save(Event event) {
+        return repo.save(event);
+    }
 
-	@Override
-	public void delete(Event event) {
-		repo.delete(event);
-	}
+    @Override
+    public List<Event> findByOrganizer(UserRegistration user) {
+        return repo.findByOrganizer(user);
+    }
 
+    @Override
+    public void delete(Event event) {
+        repo.delete(event);
+    }
 }
