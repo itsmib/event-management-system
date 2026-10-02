@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,7 +17,6 @@ import com.cts.EventManagementSystem.model.UserRegistration;
 import com.cts.EventManagementSystem.service.UserRegistrationService;
 
 @Controller
-@ComponentScan(basePackages = "com.cts.EventManagementSystem.service")
 public class UserRegistrationController {
 
 	@Autowired

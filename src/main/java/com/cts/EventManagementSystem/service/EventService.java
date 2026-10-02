@@ -12,11 +12,10 @@ import com.cts.EventManagementSystem.model.UserRegistration;
 @Service
 public interface EventService {
 
-	List<Event> findByEventDateAfterOrderByEventDateAsc(LocalDate today);
-	Optional<Event> findById(Long id);
-	List<Event> findByOrganizerEmail(String email);
-	void save(Event event);
-	List<Event> findByOrganizer(UserRegistration user);
-	void delete(Event event);
-	
+    List<Event> findByEventDateAfterOrderByEventDateAsc(LocalDate today);
+    Optional<Event> findById(Long id);
+    List<Event> findByOrganizerEmail(String email);
+    Event save(Event event);
+    List<Event> findByOrganizer(UserRegistration user);
+    void delete(Event event);
 }
