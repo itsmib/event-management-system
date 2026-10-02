@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @WebMvcTest(UserRegistrationController.class)
+@org.springframework.context.annotation.Import(com.cts.EventManagementSystem.config.SecurityConfig.class)
 public class UserRegistrationControllerTest {
 
     @Autowired
@@ -25,6 +26,12 @@ public class UserRegistrationControllerTest {
 
     @MockBean
     private UserRegistrationRepository userRegistrationRepository;
+
+    @MockBean
+    private com.cts.EventManagementSystem.service.CustomUserDetailsService userDetailsService;
+
+    @MockBean
+    private com.cts.EventManagementSystem.config.CustomAuthenticationSuccessHandler successHandler;
 
     @Test
     void showRegisterForm_addsUserToModel() throws Exception {

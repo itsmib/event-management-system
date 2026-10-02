@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import jakarta.validation.constraints.PositiveOrZero;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -59,7 +61,7 @@ public class EventRestController {
             @RequestParam LocalDate eventDate,
             @RequestParam LocalTime eventTime,
             @RequestParam(required = false) String description,
-            @RequestParam int totalTickets,
+            @RequestParam @PositiveOrZero int totalTickets,
             @RequestParam(required = false) MultipartFile imageFile,
             Principal principal) throws IOException {
 

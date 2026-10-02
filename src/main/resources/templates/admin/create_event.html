@@ -61,22 +61,32 @@
 <script>
 document.getElementById('createEventForm').addEventListener('submit', async function (event) {
     event.preventDefault();
+    const button = this.querySelector('button[type="submit"]');
+    if (button.disabled) return;
     const error = document.getElementById('errorMessage');
     error.classList.add('d-none');
+    button.disabled = true;
 
-    const response = await fetch('/api/events', {
-        method: 'POST',
-        headers: { [document.getElementById('csrfHeader').value]: document.getElementById('csrfToken').value },
-        body: new FormData(this)
-    });
-
-    if (response.ok) {
-        window.location.href = '/admin/my-events';
-        return;
+    try {
+        const response = await fetch('/api/events', {
+            method: 'POST',
+            headers: { [document.getElementById('csrfHeader').value]: document.getElementById('csrfToken').value },
+            body: new FormData(this)
+        });
+        if (response.ok && !response.redirected) {
+            window.location.href = '/admin/my-events';
+            return;
+        }
+        error.textContent = response.status === 403 || response.redirected
+            ? 'Your session may have expired or you do not have permission. Refresh the page and sign in if needed.'
+            : 'Unable to create event. Please check the entered values and try again.';
+        error.classList.remove('d-none');
+    } catch (failure) {
+        error.textContent = 'Connection interrupted. Check Manage Events before retrying to see whether your changes were saved.';
+        error.classList.remove('d-none');
+    } finally {
+        button.disabled = false;
     }
-
-    error.textContent = 'Unable to create event. Please check the entered values and try again.';
-    error.classList.remove('d-none');
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
