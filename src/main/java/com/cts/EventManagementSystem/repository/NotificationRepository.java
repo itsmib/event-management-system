@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cts.EventManagementSystem.model.Notification;
+import com.cts.EventManagementSystem.model.Event;
 import com.cts.EventManagementSystem.model.UserRegistration;
 
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
+	List<Notification> findByEventOrganizerEmailOrderBySentAtDesc(String email);
+	void deleteByEvent(Event event);
 	List<Notification> findByUser(UserRegistration user);
 }
