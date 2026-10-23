@@ -1,2 +1,8 @@
 target/
+bin/
 .idea/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store

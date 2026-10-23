@@ -1,6 +1,5 @@
 package com.cts.EventManagementSystem.controller;
 
-import com.cts.EventManagementSystem.config.CustomAuthenticationSuccessHandler;
 import com.cts.EventManagementSystem.config.SecurityConfig;
 import com.cts.EventManagementSystem.model.Event;
 import com.cts.EventManagementSystem.model.UserRegistration;
@@ -34,7 +33,6 @@ class EventRestControllerTest {
     @MockBean private EventService events;
     @MockBean private UserRegistrationService users;
     @MockBean private CustomUserDetailsService details;
-    @MockBean private CustomAuthenticationSuccessHandler handler;
 
     private UserRegistration setupOwner() {
         UserRegistration owner = new UserRegistration();
@@ -93,7 +91,9 @@ class EventRestControllerTest {
         Event event = new Event();
         event.setOrganizer(setupOwner());
         when(events.findById(1L)).thenReturn(Optional.of(event));
-        byte[] replacement = {3, 4};
+        var buffer = new java.io.ByteArrayOutputStream();
+        javax.imageio.ImageIO.write(new java.awt.image.BufferedImage(1, 1, java.awt.image.BufferedImage.TYPE_INT_RGB), "png", buffer);
+        byte[] replacement = buffer.toByteArray();
         mvc.perform(form(HttpMethod.PUT, "/api/events/1")
                 .file(new MockMultipartFile("imageFile", "event.png", "image/png", replacement)))
                 .andExpect(status().isOk());
