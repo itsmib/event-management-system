@@ -34,11 +34,11 @@ public class BookingWorkflow {
     }
     @Transactional
     public void cancel(Long id, String email) {
-        Booking initial = bookings.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Booking not found."));
-        if (!initial.getUser().getEmail().equals(email)) throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This booking belongs to another user.");
-        Event event = events.findForUpdate(initial.getEvent().getEventId()).orElseThrow();
-        // The first read may have waited on another cancellation; lock and refresh the booking before restoring inventory.
+        Long eventId = bookings.findEventIdByBookingId(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Booking not found."));
+        // Load only the scalar ID before acquiring the event lock, avoiding a stale eager Event in the persistence context.
+        Event event = events.findForUpdate(eventId).orElseThrow();
         Booking booking = bookings.findLockedById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Booking already cancelled."));
+        if (!booking.getUser().getEmail().equals(email)) throw new ResponseStatusException(HttpStatus.FORBIDDEN, "This booking belongs to another user.");
         event.setTotalTickets(event.getTotalTickets() + booking.getTotalBooking());
         bookings.delete(booking);
     }

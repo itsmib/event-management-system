@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.List;
 public interface BookingRepository extends JpaRepository<Booking, Long> {
+   @org.springframework.data.jpa.repository.Query("select b.event.eventId from Booking b where b.bookingId = :id")
+   Optional<Long> findEventIdByBookingId(@org.springframework.data.repository.query.Param("id") Long id);
    @org.springframework.data.jpa.repository.Lock(jakarta.persistence.LockModeType.PESSIMISTIC_WRITE)
    @org.springframework.data.jpa.repository.Query("select b from Booking b where b.bookingId = :id")
    Optional<Booking> findLockedById(@org.springframework.data.repository.query.Param("id") Long id);
