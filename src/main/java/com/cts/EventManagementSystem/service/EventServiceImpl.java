@@ -42,8 +42,13 @@ public class EventServiceImpl implements EventService {
         return repo.findByOrganizer(user);
     }
 
+    @Autowired
+    private com.cts.EventManagementSystem.repository.NotificationRepository notifications;
+
     @Override
+    @org.springframework.transaction.annotation.Transactional
     public void delete(Event event) {
+        notifications.deleteByEvent(event);
         repo.delete(event);
     }
 }

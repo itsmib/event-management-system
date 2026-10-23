@@ -12,6 +12,8 @@ public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long eventId;
+	@Version
+	private Long version;
 	private String name;
 	private String category;
 	private String location;
